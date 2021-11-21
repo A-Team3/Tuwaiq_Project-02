@@ -8,7 +8,7 @@ const getUser = (req,res)=>{
     console.log(typeof user)
     console.log(req.params.id)
     // const foundUser = user.find((elem) =>{
-    //     return elem.id === req.params.id
+    //     return elem.id === req.params.id 
     // })
     const foundUser = user.find( ({ id }) => id === parseInt(req.params.id) );
     const result = user.find( ({ id }) => id === parseInt(req.params.id));
