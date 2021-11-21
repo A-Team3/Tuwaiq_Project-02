@@ -1,5 +1,4 @@
 const {user} = require('../routes/data')
-
 const getAllUser = (req,res)=>{
     // console.log("All users")
     res.send(user)
@@ -9,7 +8,6 @@ const getUser = (req,res)=>{
     console.log(typeof user)
     console.log(req.params.id)
     // const foundUser = user.find((elem) =>{
-
     //     return elem.id === req.params.id 
     // })
     const foundUser = user.find( ({ id }) => id === parseInt(req.params.id) );
@@ -36,7 +34,6 @@ const addNewUser = (req,res)=>{
         city:req.body.city,
         platoon:req.body.platoon,
         numberphone: req.body.numberphone
-
     }
     user.push(addedUser)
     res.status(201).send(addedUser);
@@ -56,5 +53,4 @@ const updateUser = (req,res)=>{
         }
     })
 }
-
 module.exports = {getAllUser,getUser,updateUser,addNewUser}
