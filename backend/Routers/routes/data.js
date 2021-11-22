@@ -7,7 +7,8 @@ const user = [
         numberphone: 8274803873,
         age:18,
         city:"najran",
-        platoon:"o-"
+        platoon:"o-",
+        
     },
     {
         id:2,
