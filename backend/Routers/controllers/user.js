@@ -1,6 +1,6 @@
 const {user} = require('../routes/data')
 const getAllUser = (req,res)=>{
-    // console.log("All users")
+     console.log("All users")
     res.send(user)
 }
 const getUser = (req,res)=>{
@@ -24,16 +24,17 @@ const getUser = (req,res)=>{
     res.status(404).send("user not found")
 }
 const addNewUser = (req,res)=>{
+    console.log(req.body);
     //get the length of users array, add 1 to the length, put it in id
     const addedUser = {
         //id:req.body.id,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         age: req.body.age,
         city:req.body.city,
-        platoon:req.body.platoon,
-        numberphone: req.body.numberphone
+        bloodGroup:req.body.bloodGroup,
+        phoneNumber: req.body.phoneNumber
     }
     user.push(addedUser)
     res.status(201).send(addedUser);
@@ -43,13 +44,13 @@ const updateUser = (req,res)=>{
     user.forEach((elem,i)=>{
         if(i == userId){
             elem.id = req.body.id;
-            elem.firstname = req.body.firstname;
-            elem.lastname = req.body.lastname;
+            elem.firstName = req.body.firstName;
+            elem.lastName = req.body.lastName;
             elem.email= req.body.email;
             elem.age= req.body.age;
             elem.city= req.body.city;
-            elem.platoon= req.body.platoon;
-            elem.numberphone= req.body.numberphone
+            elem.bloodGroup= req.body.bloodGroup;
+            elem.phoneNumber= req.body.phoneNumber
         }
     })
 }
