@@ -1,5 +1,5 @@
 import React from 'react';
-import Singin from './components/main/Singin'
+import Singin from './components/main/SignUp'
 import Header from "./components/navigation/Header";
 import "./App.css";
 import {  Route, Routes } from "react-router-dom";

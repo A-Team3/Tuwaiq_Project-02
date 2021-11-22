@@ -1,47 +1,108 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Form ,Button }from "react-bootstrap";
+import { useState } from 'react';
+import axios from 'axios'
+
 //import {Link} from"react-router-dom";
 import "./main.css";
- function Singin(){
-   return(
+ function SignUp(){
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [age, setAge] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  
+
+  function handleSubmit(event){
+//  console.log(firstName, lastName, age, email, bloodGroup);
+
+//Check if age < 18 then show message that must have age above 18
+   event.preventDefault();
+
+
+  //  axios.get('http://localhost:5000/users')
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+axios.post('http://localhost:5000/users', {
+  firstName: firstName,
+  lastName: lastName,
+  email: email,
+  age: age,
+  city:city,
+  bloodGroup:bloodGroup,
+  phoneNumber: phoneNumber
+})
+.then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+}
+  return(
      
      <div style={{textAlign:"center",marginLeft:"45%",width:"200px"}}>
-       <div><h1>You Need Login</h1></div>
-<Form dir-align="center">
+       <div><h1>You Need SignUp</h1></div>
+
+<Form dir-align="center" onSubmit={e => { handleSubmit(e) }}>
+
 <Form.Group className="mb-3" controlId="formBasicFirstName">
     <Form.Label>First Name</Form.Label>
-    <Form.Control type="firstname" placeholder="Enter first name" />
+    <input 
+          name='firstName' 
+          type='text'
+          value={firstName}
+          onChange={e => setFirstName(e.target.value)}
+        />
+    {/* <Form.Control type="phoneNummber" name="phoneNumber" value={phoneNumber} onChange={e => handleChange(e.target.value)} placeholder="Enter Phone Number" /> */}
+
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicLastName">
     <Form.Label>Last Name</Form.Label>
-    <Form.Control type="lastname" placeholder="Enter Last Name" />
+    <Form.Control type="lastName" name="lastName" value={lastName} onChange={e => setLastName(e.target.value)} placeholder="Enter Last Name" />
+    {/* <input 
+          name='firstName' 
+          type='text'
+          value={firstName}
+          
+        /> */}
+
   </Form.Group>
   
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email" />
+
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicAge">
     <Form.Label>Age</Form.Label>
-    <Form.Control type="age" placeholder="Enter Age" />
+    <Form.Control type="age" name="age" value={age} onChange={e => setAge(e.target.value)} placeholder="Enter Age" />
+
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicNumberPhone">
-    <Form.Label>Number Phone:</Form.Label>
-    <Form.Control type="numberphone:" placeholder="Enter Number Phone:" />
+    <Form.Label>Phone Number</Form.Label>
+    <Form.Control type="phoneNumber" name="phoneNumber" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeholder="Enter Phone Number" />
   </Form.Group>
   
   <Form.Group className="mb-3" controlId="formBasicCity">
     <Form.Label>City</Form.Label>
-    <Form.Control type="City" placeholder="Enter City" />
+    <Form.Control type="city" name="city" value={city} onChange={e => setCity(e.target.value)} placeholder="Enter City" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPlatoon">
-    <Form.Label>Platoon</Form.Label>
-    <Form.Control type="platoon" placeholder="Enter platoon" />
+    <Form.Label>Blood Group</Form.Label>
+    <Form.Control type="bloodGroup" name="bloodGroup" value={bloodGroup} onChange={e => setBloodGroup(e.target.value)} placeholder="Enter Blood Group" />
   </Form.Group>
   
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -55,7 +116,7 @@ import "./main.css";
      </div>
    )
  }
- export default Singin;
+ export default SignUp;
 // class Singin extends Component {
 //   handleSubmit = (e) => {
 //     e.preventDefault();
