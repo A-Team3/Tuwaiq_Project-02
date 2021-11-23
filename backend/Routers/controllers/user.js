@@ -39,6 +39,16 @@ const addNewUser = (req,res)=>{
     user.push(addedUser)
     res.status(201).send(addedUser);
 }
+const loginUser= (req, res) =>{
+//check user name and password
+    console.log(req.body);
+    // console.log(user);
+    const result = user.find( ({ email, password }) => email === req.body.email && password === req.body.password );
+    if(result)
+        res.send(result);
+    else
+        res.send("User not found");
+}
 const updateUser = (req,res)=>{
     const userId = req.query.id
     user.forEach((elem,i)=>{
@@ -54,4 +64,4 @@ const updateUser = (req,res)=>{
         }
     })
 }
-module.exports = {getAllUser,getUser,updateUser,addNewUser}
+module.exports = {getAllUser,getUser,updateUser,addNewUser, loginUser}
