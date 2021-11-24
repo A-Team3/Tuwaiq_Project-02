@@ -1,18 +1,21 @@
 import React from 'react';
-import SingUp from './components/main/SignUp'
+import SignIn from './components/main/SignIn';
+import SignUp from './components/main/SignUp';
 import Header from "./components/navigation/Header";
 import "./App.css";
 import {  Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import SignIn from './components/main/signIn';
+import Home from './components/main/Home';
 
 export default function App() {
   return (
     <div>
     <Route/>
-		<SingUp/>
-    <SignIn/> 
+    <SignIn/>
+ 
     <Header />
+    {/* <SignUp/> */}
+    {/* <Home/> */}
       <Footer/>
     </div>
     

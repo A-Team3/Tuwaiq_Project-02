@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Form ,Button }from "react-bootstrap";
+import {Form ,Button,Card}from "react-bootstrap";
 import { useState } from 'react';
 import axios from 'axios'
 
@@ -49,19 +49,26 @@ axios.post('http://localhost:5000/users', {
 }
   return(
      
-     <div style={{textAlign:"center",marginLeft:"45%",width:"200px"}}>
-       <div><h1>You Need SignUp</h1></div>
-
+     <div style={{textAlign:"center",marginLeft:"35%",width:"200px"}}>
+      
+       <Card style={{textAlign:"center",marginLeft:"20px",backgroundColor: "rgb(205, 92, 92)",width:"400px"}}>
+  <Card.Body>
+     
+     
+       <h1>You Need SignUp</h1>
+    
+     
 <Form dir-align="center" onSubmit={e => { handleSubmit(e) }}>
 
 <Form.Group className="mb-3" controlId="formBasicFirstName">
     <Form.Label>First Name</Form.Label>
-    <input 
+    <Form.Control type="firstName" name="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="Enter First Name" />
+    {/* <input 
           name='firstName' 
           type='text'
           value={firstName}
           onChange={e => setFirstName(e.target.value)}
-        />
+        /> */}
     {/* <Form.Control type="phoneNummber" name="phoneNumber" value={phoneNumber} onChange={e => handleChange(e.target.value)} placeholder="Enter Phone Number" /> */}
 
   </Form.Group>
@@ -108,11 +115,12 @@ axios.post('http://localhost:5000/users', {
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-  <Button variant="primary" type="submit">
+  <Button style={{backgroundColor: "rgb(68, 53, 53)"}}>
     Submit
   </Button>
 </Form>
-
+</Card.Body>
+</Card>
      </div>
    )
  }
