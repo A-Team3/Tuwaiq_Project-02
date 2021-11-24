@@ -26,6 +26,7 @@ export default function SignIn() {
  }).then(res =>{
     console.log(res)
     if(res.data === 'User not found')
+    ;
     //swal('Incorrect user name or password');
 }).catch(err => {
 console.log(err); 
@@ -56,6 +57,7 @@ console.log(err);
           Login
         </Button>
       </Form>
+
     </div>
   );
 }
