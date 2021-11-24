@@ -1,31 +1,50 @@
 import './footer.css'
-import{Image} from "react-bootstrap"
+import{Image,Row} from "react-bootstrap"
 import {Link} from 'react-router-dom'
 function Footer(){
     return(
-        <footer className='fotr'>
-          <div>
-  <h1>Connect with us
+     <div> 
+       
+      <footer  style={{backgroundColor:"black",marginTop:"150px"}}>   
+       <div className="main-footer">
+          <div className="container">
+            <div className="row">
+           < div className="colo">
+             
+        <h4 style={{color: "gray"}}>connect with us: </h4>
+        <ul className="list-unstyled">
+          <li style={{color: "white"}}>       Wateen Endowment Foundation
+</li>
+          <li style={{color: "white"}} > Record number: 1010627625</li>
+          <li style={{color: "white"}}>Tax number: 310406758300003</li>
+          <li style={{color: "white"}}>Address: Riyadh - Al-Wurud District - Olaya Road
+</li>
+<li style={{color: "white"}}>          Copyright ©2021 Wateen Initiative. All rights reserved
+</li>
+        </ul>
+    
+        </div>
+           </div>
+              </div>
+              </div>
 
-</h1> 
-  <Link to="/">Wteen@example.com</Link>
-  <Image style={{width:"80px",height:"80px"}} src="https://play-lh.googleusercontent.com/hcA5UwVcIVIR3nxiAAl5tXMElHSqeoCJiqtMg8IbHDH5WC2ag5MAs40hUuHcyNC2u08" />
-  <Image style={{width:"80px",height:"80px"}} src="https://www.almrsal.com/wp-content/uploads/2021/02/Depositphotos_127186948_s-2019.jpg" />
-  <p>مؤسسة وتين الوقفية
+    
+              <Image style={{width:"60px",height:"60px",marginLeft:"45%"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfzn1T7H5Ls02u1zERewsVWKNPGI4HW3HO-Zy268QIIREz9_UKOrCIN1ULNLjXmSC21c&usqp=CAU" />
+  <Image style={{width:"80px",height:"80px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_eabwcDZTDqb3A20Hq7JmHXY3K5yEvgfsm26sOkj65ePMvobGrN6IBTJj1uk2tQPidq0&usqp=CAU" />
+  
+    
+    
+  
 
-رقم السجل : 
-1010627625
-الرقم الضريبي : 310406758300003
+   
+  </footer>
 
-العنوان : الرياض - حي الورود - طريق العليا
+  </div>
+  
+  
 
-ص.ب. 2609 رمز بريدي 12251
-© 2021 كل الحقوق محفوظة لمبادرة وتين
-وتين هي مبادرة مدعومة من وزارة الصحة.</p>
-</div>
-</footer>
-
-        
     );
-}
+}    
+  
+
 export default Footer;
