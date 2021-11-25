@@ -11,16 +11,18 @@ export default function App() {
   return (
     <div>
     <Header />
-    <div>
+     <div>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="SignUp" element={<SignUp/>}/>
         <Route path="SignIn" element={<SignIn/>}/>
-        
+      
         
       </Routes>
+      
       <Outlet/>
-    </div>
+    </div> 
+    
     <Footer/>
   </div>
   
