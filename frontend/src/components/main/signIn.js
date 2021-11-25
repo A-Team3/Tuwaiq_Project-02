@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import {Form ,Button,Card}from "react-bootstrap";
 // import {useNavigate} from 'react-router-dom';
 
  import swal from 'sweet-alert';
@@ -34,7 +33,10 @@ console.log(err);
 });
    }
   return (
-    <div className="signIn">
+    <div  style={{textAlign:"center",marginLeft:"35%",width:"200px"}}className="signIn">
+
+<Card style={{textAlign:"center",marginLeft:"20px",backgroundColor: "rgb(205, 92, 92)",width:"400px"}}>
+  <Card.Body>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label id="h">Email</Form.Label>
@@ -53,11 +55,14 @@ console.log(err);
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit"  disabled={!validateForm()}>
+        <Button style={{backgroundColor: "rgb(68, 53, 53)"}}block size="lg" type="submit"  disabled={!validateForm()}>
           Login
         </Button>
+        
       </Form>
 
+      </Card.Body>
+</Card>
     </div>
   );
 }
