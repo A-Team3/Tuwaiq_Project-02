@@ -1,5 +1,5 @@
 import './footer.css'
-import{Image,Row} from "react-bootstrap"
+import{Image} from "react-bootstrap"
 import {Link} from 'react-router-dom'
 function Footer(){
     return(
