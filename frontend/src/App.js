@@ -11,14 +11,17 @@ import "./App.css";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 
+
+
+
 export default function App() {
   return (
     <div>
+
       <Header />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/Footer" element={<Footer />} /> */}
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/Pag1" element={<Pag1 />} />
