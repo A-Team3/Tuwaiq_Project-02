@@ -1,8 +1,9 @@
 import React from "react";
 import {Carousel,Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
- import { Link } from "react-router-dom"
+ import { Link, useNavigate } from "react-router-dom"
 export default function Home() {
+  const navigate = useNavigate()
     return(
       <div>
 
@@ -14,9 +15,15 @@ export default function Home() {
       alt="First slide"
     />
     <Carousel.Caption>
+
    
   <Button style={{color:"black"}} variant=""size="lg" ><h1> Blood Bag Trip</h1> </Button>
-     
+    
+    {/* <Button variant="outline-light" size="lg">
+    blood bag trip
+  </Button> */}
+  <Link to = "/pag1" style={{color:"black",textDecorationLine:"none"}} variant=""size="lg"> <h1> Blood Bag Trip</h1> </Link>
+      {/* <h3>blood bag trip</h3> */}
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -27,8 +34,13 @@ export default function Home() {
       alt=""
     />
     <Carousel.Caption>
+
   <Button style={{color:"black"}} variant=""size="lg" ><h1>Blood Type Do You Give?</h1> </Button>
      
+
+  <Link to="/pag2" style={{color:"black",textDecorationLine:"none"}} variant=""size="lg" ><h1>Blood Type Do You Give?</h1> </Link>
+      {/* <h3>blood type do you give?</h3> */}
+
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -39,14 +51,29 @@ export default function Home() {
       alt=""
     />
     <Carousel.Caption>
+
   <Button style={{color:"black"}} variant=""size="lg" ><h1>First Blood Donor</h1></Button>
       
+
+  <Link to ="/pag3" style={{color:"black",textDecorationLine:"none"}} variant=""size="lg" ><h1>First Blood Donor</h1></Link >
+      {/* <h3>first blood donor</h3> */}
+
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
 
+
       <Button style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}}><h1>Appointment Booking</h1></Button>
+
+<p>
+        {' '}
+      {' '}
+      </p>
+  <Button  style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}} onClick={()=>{
+    navigate("/Questions")
+  }}><h1>Appointment Booking</h1></Button>
+
 </div>
     )
 }
