@@ -115,7 +115,7 @@ axios.post('http://localhost:5000/users', {
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-  <Button style={{backgroundColor: "rgb(68, 53, 53)"}}>
+  <Button style={{backgroundColor: "rgb(68, 53, 53)"}} to="/SignIn">
     Submit
   </Button>
 </Form>
