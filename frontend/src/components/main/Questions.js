@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card,Col,Button } from "react-bootstrap";
 export default function Questions() {
   const [q2, setQ1] = useState(false);
   const [q3, setQ2] = useState(false);
@@ -39,105 +39,107 @@ export default function Questions() {
   
 
   return (
-    <div style={{ textAlign: "center", marginLeft: "35%", width: "200px" }}>
+    <div style={{width: "18rem " ,marginTop: "30px",textAlign:"center",marginLeft:"40%" }}>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title>Q1</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text>DO you suffer from a high temperature ?</Card.Text>
-          <button style={{ width: "18rm" }}
+          {/* <Button as={Col} variant="secondary" className="mx-2">Button #2</Button> */}
+
+          <Button as={Col} style={{  width: "18rm" ,className:"mx-2",backgroundColor:"gray"}}
             onClick={() => {
               checkAnswer1("Yes");
             }}
           >
             YES
-          </button>
-
-          <button 
+            </Button>
+           
+          <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
             onClick={() => {
               checkAnswer1("No");
             }}
           >
             No
-          </button>{" "}
+            </Button>{" "}
         </Card.Body>
       </Card>
 
       {q2 && (
-        <Card style={{ width: "18rem", marginTop: "50px"}}>
+        <Card style={{ width: "18rem", marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
             <Card.Title>Q2</Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>
             Have you taken aspirin within 48 hours?
             </Card.Text>
-            <button
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer2("Yes");
               }}
             >
               YES
-            </button>
-            <button
+            </Button>
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer2("No");
               }}
             >
               No
-            </button>
+            </Button>
           </Card.Body>
         </Card>
       )}
       {""}
 
       {q3 && (
-        <Card style={{ width: "18rem " ,marginTop: "50px"}}>
+        <Card style={{ width: "18rem " ,marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
             <Card.Title>Q3</Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>
             Have you donated blood in the past 60 days?
             </Card.Text>
-            <button
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer3("Yes");
               }}
             >
               YES
-            </button>
-            <button
+            </Button>
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer3("No");
               }}
             >
               No
-            </button>
+            </Button>
           </Card.Body>
         </Card>
       )}
       {""}
       {q4 && (
-        <Card style={{ width: "18rem" ,marginTop: "50px"}}>
+        <Card style={{ width: "18rem" ,marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
             <Card.Title>Q4</Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>
             Have you had any surgery within the previous 12 months?
             </Card.Text>
-            <button
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer4("Yes");
               }}
             >
               YES
-            </button>
-            <button
+            </Button>
+            <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer4("No");
               }}
             >
               No
-            </button>
+            </Button>
                        
           </Card.Body>
           <button style={{margin:"20px",backgroundColor:"green"}}><h5>Take An Appointment</h5></button>
