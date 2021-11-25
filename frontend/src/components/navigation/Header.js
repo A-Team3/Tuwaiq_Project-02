@@ -17,7 +17,7 @@ export default function Header() {
 
           <Nav className="me-auto">
             <Nav.Link>
-              <Link style={{textDecorationLine:"none",color:"whitesmoke"}} to="/">Help</Link>
+              <Link style={{textDecorationLine:"none",color:"whitesmoke"}} to="/Footer">Help</Link>
             </Nav.Link>
             <Nav.Link>
             {" "}
