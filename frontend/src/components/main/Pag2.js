@@ -1,48 +1,40 @@
 import React from "react";
 
-import { Navbar, Container, Brand, Nav,Image ,Form,Card,Button} from "react-bootstrap";
+import {Card} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
  import { Link } from "react-router-dom"
  export default function Pag2(){
      return(
          <div>
-<Card style={{textAlign:"center",marginLeft:"10%",width:"80%",height:"600%"}}>
+<Card style={{marginBottom:"50px",marginLeft:"20%",width:"60%",height:"600%"}}>
   <Card.Body>
-  <h1> Blood Bag Trip</h1>
+  <h1 style={{textAlign:"center",marginBottom:"50px",marginLeft:"20%",width:"60%",height:"600%"}}>Blood Type Do You Give?</h1>
   <img  style={{height:"400px"}}
       className="d-block w-100"
       src="https://i.pinimg.com/564x/c2/c5/8e/c2c58e4f217b7daa48f50c36d76bd695.jpg"
       alt="First slide"
     />
-
+    <h4 style={{color: "gray"}}>We start with the A + group: </h4>
+<p>See, it is the seventh in terms of rarity, and the owners of this type can donate blood for A + and + AB, and they can support platelets for A + and + O </p>
+<h4 style={{color: "gray"}}>Followed by the B + group:</h4>
+<p> which is considered the sixth type in terms of rarity, and holders of this type can donate blood for B + and AB +, and they can donate platelets for B + and O +</p>
+<h4 style={{color: "gray"}}>Faction +AB:</h4>
+<p>The owners of this type can donate blood for themselves only, but they can receive blood from all types</p>
+<h4 style={{color: "gray"}}>We move on to the last positive type,which is the O + type:</h4>
+<p>  and it is considered the most important group because the owners of this blood group can donate to all the O +, AB +, B + and A + positive groups.</p>
+<h4 style={{color: "gray"}}>The first negative type is -A:</h4>
+<p> Its owners can donate blood for -A, A +, -AB and AB +, and it is the fourth type in terms of rarity!</p>
+<h4 style={{color: "gray"}}>The -B type:</h4>
+<p> which is considered the second rarest type, They can donate to the owners of the following types -B, B+, -AB, and AB+</p>
+<h4 style={{color: "gray"}}>People with type AB:</h4>
+<p> which is the most rare blood group! People with this type can donate blood only for themselves and for AB+</p>
+<h4 style={{color: "gray"}}>Finally -O</h4>
+<p>Holders of this type can donate to all negative and positive blood types, but the owners of this type cannot receive blood except from themselves only!
+That is why it is called the "Great Family".
+It is considered the fifth species in terms of rarity!</p>
   </Card.Body>
 </Card>
-<Form style={{marginLeft:"10%",width:"500%",height:"600%"}}>
-<div>
 
-<h4 style={{color: "gray"}}>Prepared by Laboratory Specialist: Rawan Al-Hazmi
-The article centers around the main questions: </h4>
-        <ul className="list-unstyled">
-          <li >What are the components of blood?</li>
-          <li > How to separate components of the blood bag?</li>
-          <li >To whom are blood components transported?</li>
-          <li >What are the necessary tests that are conducted for the blood bag before transferring it to the patient to ensure its health?</li>
-          <h4 style={{color: "gray"}}>Blood components are divided into several main components, namely:</h4>
-          <li >Red Blood cells</li>
-          <li >White Blood cells</li>
-          <li > Platelets</li>
-          <li>Plasma</li>
-          <h4 style={{color: "gray"}}>How is blood drawn from a donor?</h4>
-          <p>Blood is drawn from the donor, and placed in a primary bag, the air sac on the anticoagulant that appears to protect the blood from clotting and keep it going for longer.</p>
-          <h4 style={{color: "gray"}}>What is the method for separating components?</h4>
-          <p>First the blood bag is placed in a centrifuge, and then the process of separation of components is divided into two main stages:
-The first: the stage of slow circulation, in which blood cells are separated from the plasma and platelets so that the plasma and platelets are in the upper layer and blood cells in the lower layer.
-The second: rapid rotation. At this stage, the plasma is separated from the plates, so that the plasma is at the top and the plates are at the bottom.
-White blood cells are completely eliminated through specialized filters, because they excite the immune system and give an undesirable reaction.</p>
-          <h4 style={{color: "gray"}}>What is the temperature at which blood components are stored?</h4>
-        </ul>
-</div>
-</Form>
 
          </div>
      )
