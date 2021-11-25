@@ -13,14 +13,12 @@ function Footer(){
              
         <h4 style={{color: "gray"}}>connect with us: </h4>
         <ul className="list-unstyled">
-          <li style={{color: "white"}}>       Wateen Endowment Foundation
-</li>
+          <li style={{color: "white"}}>Wateen Endowment Foundation</li>
           <li style={{color: "white"}} > Record number: 1010627625</li>
           <li style={{color: "white"}}>Tax number: 310406758300003</li>
           <li style={{color: "white"}}>Address: Riyadh - Al-Wurud District - Olaya Road
 </li>
-<li style={{color: "white"}}>          Copyright ©2021 Wateen Initiative. All rights reserved
-</li>
+<li style={{color: "white"}}>Copyright ©2021 Wateen Initiative. All rights reserved</li>
         </ul>
     
         </div>
