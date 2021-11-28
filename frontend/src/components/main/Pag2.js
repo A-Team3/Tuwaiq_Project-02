@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
   <h1 style={{textAlign:"center",marginBottom:"50px",marginLeft:"20%",width:"60%",height:"600%"}}>Blood Type Do You Give?</h1>
   <img  style={{height:"400px"}}
       className="d-block w-100"
-      src="https://i.pinimg.com/564x/c2/c5/8e/c2c58e4f217b7daa48f50c36d76bd695.jpg"
+      src="https://i.pinimg.com/564x/57/07/85/57078555b4723488ecdeaa8fe10ee244.jpg"
       alt="First slide"
     />
     <h4 style={{color: "gray"}}>We start with the A + group: </h4>
