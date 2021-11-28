@@ -1,0 +1,91 @@
+ .main{
+    text-align: center;
+     justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    background-attachment: rgb(180, 133, 133);
+
+
+} 
+.sub-main{
+display:flex;
+justify-content: center;
+height: 550px;
+width: 35%;
+box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+padding-top:30px ;
+border: radius 60px; 
+background-color: rg (243, 233, 233);
+ } 
+ 
+  /* .img{
+padding-top: 20px;
+justify-content: center;
+display: flex;
+margin-right:100px ;
+}
+.container-img{
+background-color:rgb(241, 204, 134) rgb (223,221,221);
+border-radius: 150px; 
+align-items:center ;
+display:flex ;
+height: 115px;
+width:115;
+}
+
+.Singn-button{
+ padding-top: 25px;
+
+
+}
+.profile{
+height: 100;
+width: 100;
+border-radius:130px;
+
+}
+.input{
+height:50 px;
+width:300px ;
+border-radius: 60px;
+box-shadow: rgb(49, 48, 49) (0px 0px 25px 0px);
+
+}
+.email{
+height: 2px;
+width: 2px;
+position:absolute ;
+padding: 5px 0 0 5px;
+margin-top: ;
+background-color: ;
+}
+.password{
+height: 25;
+width: 25;
+position:absolute ;
+padding:14px 0 0 25px ;
+margin-top: 400px;
+} 
+.second.input{
+padding-top: 20px;
+
+}
+.singhin-button{
+
+padding: 25px;
+
+}
+button{
+width:380px ;
+height: 50px;
+border-radius: 60px;
+background-color: rgb(139, 163, 209);
+color: white;
+font-size: 25px;
+border:none;
+
+} */
+/* .link{
+font-weight: 400;
+font-size: 25px;
+} */

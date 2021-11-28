@@ -37,6 +37,14 @@ export default function Questions() {
     }
   };
   
+  const checkAnswer5 = (answer) => {
+    if (answer === "Yes") {
+      alert("Go You are not eligible to donate blood Q5");
+    } else if (answer === "No") {
+      setQ5(true);
+    }
+  };
+  
 
   return (
     Q6 ?
@@ -143,11 +151,16 @@ export default function Questions() {
             </Button>
                        
           </Card.Body>
-          <button style={{margin:"20px",backgroundColor:"green"}}><h5>Take An Appointment</h5></button>
+        
         </Card>
+         
       )}
-      
-    
+       {q5 && (
+        <Button style={{margin:"20px",backgroundColor:"green"}}  onClick={() => {
+                checkAnswer5("No");
+              }}
+ >Take An Appointment</Button>
+       )}
     
     </div>
     :
@@ -164,4 +177,5 @@ export default function Questions() {
   </span>
 
   );
+  
 }

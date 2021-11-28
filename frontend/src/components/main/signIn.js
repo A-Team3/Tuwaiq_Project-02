@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -7,8 +8,10 @@ import axios from "axios";
 export default function SignIn() {
   //   const nav = useNavigate();
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [rong,setRong] = useState(false)
+
 
   // const navigation = useNavigate();
   function validateForm() {
@@ -98,5 +101,31 @@ The Email or Password is Incorrect   </span>
    }
    
     </div>
+     <div>
+
+   <h1>SignIn</h1>
+  <div> 
+  <input type="text" placeholder="user name" className="name1" />
+  <img style={{width:"20px",height:"20px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvBT4W7EoXYk-xWQvsgoMQQ87xddefgYTCIvZz7vwPCSR9gzD2gbow_OnEeTEwRaCdBc&usqp=CAU" alt="email"></img>
+  
+
+  </div>
+  <div>
+   
+  <input type="text" placeholder="password"  className="name2"/>
+  <img style={{width:"20px",height:"20px",marginBottom:"100px"}} src="https://www.freeiconspng.com/uploads/lock-icon-png-14.png" alt="password"/>
+   
+  
+  
+     </div>
+     <button style={{width:"80px",height:"50px",marginTop:100,backgroundColor:"gray"}}>SignIn</button>
+     </div>
+    </div>
+
+    
+    
+   </div>
+   
+     </div>   
   );
 }

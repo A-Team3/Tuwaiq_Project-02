@@ -16,13 +16,13 @@ import Success from "./components/main/Success";
 
 
 
+
 export default function App() {
   return (
     <div>
 
       <Header />
-      <Success/>
-      {/* <div>
+       <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" element={<SignUp />} />
@@ -38,7 +38,7 @@ export default function App() {
         </Routes>
 
         <Outlet />
-      </div> */}
+      </div> 
 
       <Footer />
     </div>
