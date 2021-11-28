@@ -19,7 +19,7 @@ const user = [
         phoneNumber: 5639734344,
         age:23,
         city:"Abha",
-        bloodGroup:"A+",
+        bloodGroup:"B+",
         Password:"1234",
     },
     {
@@ -29,8 +29,8 @@ const user = [
          email:"tsgv69@gmail.com",
          phoneNumber: 9873673223,
          age:43,
-         city:"Riyadh",
-         bloodGroup:"o+",
+         city:"paris",
+         bloodGroup:"honey",
          Password:"12"
     },
     {
@@ -46,8 +46,8 @@ const user = [
     },
     {
         id:5,
-        firstName:"majed",
-         lastName:"saeed",
+        firstName:"Majed",
+         lastName:"Saeed",
          email:"qwe123@gmail.com",
          phoneNumber: 1273829105,
          age:29,
@@ -58,7 +58,7 @@ const user = [
     },
     {
         id:6,
-        firstName:"muna",
+        firstName:"Hana",
          lastName:"Ahmad",
          email:"asd345@gmail.com",
          phoneNumber: 5729398723,
@@ -92,13 +92,52 @@ const user = [
     },
     {
         id:9,
-        firstName:"ali",
-         lastName:"salem",
+        firstName:"Aref",
+         lastName:"Nasser",
+         email:"Basd345@gmail.com",
+         phoneNumber: 0257245,
+         age:39,
+         city:"Londen",
+         bloodGroup:"AB-",
+         Password:"12345678"
+    },
+
+
+    {
+        id:10,
+        firstName:"Nasser",
+         lastName:"Salem",
+         email:"Basd345@gmail.com",
+         phoneNumber: 0257245,
+         age:44,
+         city:"Khobr",
+         bloodGroup:"A+",
+         Password:"12345678"
+    },
+
+
+    {
+        id:11,
+        firstName:"Ali",
+         lastName:"Salem",
          email:"Basd345@gmail.com",
          phoneNumber: 0257245,
          age:39,
          city:"Abha",
-         bloodGroup:"A-",
+         bloodGroup:"o-",
+         Password:"12345678"
+    },
+
+
+    {
+        id:12,
+        firstName:"Mona",
+         lastName:"Ali",
+         email:"Basd345@gmail.com",
+         phoneNumber: 0257245,
+         age:34,
+         city:"Abha",
+         bloodGroup:"A+",
          Password:"12345678"
     },
 

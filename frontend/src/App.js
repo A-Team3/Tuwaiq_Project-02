@@ -7,6 +7,7 @@ import Pag3 from "./components/main/Pag3";
 import Home from "./components/main/Home";
 import Questions from "./components/main/Questions";
 import Header from "./components/navigation/Header";
+import People from "./components/main/People";
 import "./App.css";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
@@ -30,6 +31,10 @@ export default function App() {
           <Route path="/Pag2" element={<Pag2 />} />
           <Route path="/Pag3" element={<Pag3 />} />
           <Route path="/Questions" element={<Questions />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/people" element={<People/>} />
+
         </Routes>
 
         <Outlet />

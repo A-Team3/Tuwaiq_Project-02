@@ -14,11 +14,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
       src="https://i.pinimg.com/564x/c2/c5/8e/c2c58e4f217b7daa48f50c36d76bd695.jpg"
       alt="First slide"
     />
-    <h4 style={{color: "gray"}}>Prepared by Laboratory Specialist: Rawan Al-Hazmi
-The article centers around the main questions: </h4>
+    <h4 style={{color: "gray"}}><h2>Prepared by Laboratory Specialist: Rawan Al-Hazmi
+The article centers around the main questions:</h2> </h4>
         <ul className="list-unstyled">
-          <li >What are the components of blood?</li>
-          <li > How to separate components of the blood bag?</li>
+          <li ><h2>What are the components of blood?</h2></li>
+          <li ><h2> How to separate components of the blood bag?</h2></li>
           <li >To whom are blood components transported?</li>
           <li >What are the necessary tests that are conducted for the blood bag before transferring it to the patient to ensure its health?</li>
           <h4 style={{color: "gray"}}>Blood components are divided into several main components, namely:</h4>

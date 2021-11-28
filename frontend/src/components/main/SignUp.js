@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Form ,Button,Card}from "react-bootstrap";
 import { useState } from 'react';
+import {  useNavigate } from "react-router-dom"
 import axios from 'axios'
 
 //import {Link} from"react-router-dom";
@@ -14,6 +15,8 @@ import "./main.css";
   const [age, setAge] = useState("");
   const [bloodGroup, setBloodGroup] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [age18, setAge18]= useState(false);
+  
   
 
   function handleSubmit(event){
@@ -47,7 +50,8 @@ axios.post('http://localhost:5000/users', {
 });
 
 }
-  return(
+const navigate = useNavigate()
+  return( 
      
      <div style={{textAlign:"center",marginLeft:"35%",width:"200px"}}>
       
@@ -115,101 +119,37 @@ axios.post('http://localhost:5000/users', {
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-  <Button style={{backgroundColor: "rgb(68, 53, 53)"}} to="/SignIn">
+  <Button style={{backgroundColor: "rgb(68, 53, 53)"}} onClick={()=>{
+    if(age >= 18){
+      navigate("/SignIn")
+    }else{
+      setAge18(true);
+    }
+  }}>
     Submit
   </Button>
 </Form>
 </Card.Body>
 </Card>
-     </div>
+    
+     {age18 &&
+    <center>
+     <span
+     style={{
+       display: "block",
+       margin: "auto",
+       textAlign: "center",
+       fontSize: "large",
+       fontStyle: "bold",
+       color: "red",
+       
+     }}
+   >
+   You Must Be an Adult
+   </span>
+   </center>
+   }
+   </div>
    )
  }
  export default SignUp;
-// class Singin extends Component {
-//   handleSubmit = (e) => {
-//     e.preventDefault();
-//     const data = {
-//       firstname:this.firstname,
-//          lastname:this.lastname,
-//          email:this.email,
-//          numberphone:this.numberphone,
-//          age:this.age,
-//          city:this.city,
-//          platoon:this.platoon,
-     
-//     };
-    
-//       }
-
-//     }
-  
-//   render() 
-//     return (
-//       <div>
-       
-//         <div className="container" >
-//         <div className="row" >
-//         <div className="col" >
-//         <div className="col-10" >
-       
-          
-//             <form className="form" onSubmit={this.handleSubmit}>
-//               <h3>sing in</h3>
-
-//               <input className="input"
-//                 type="text"
-//                 placeholder="Enter You First Name"
-//                 onChange={(e) => (this.firstname = e.target.value)}
-//               />
-//                 <input className="input"
-//                 type="text"
-//                 placeholder="Enter You Last Name"
-//                 onChange={(e) => (this.lastname = e.target.value)}
-//               />
-//                 <input className="input"
-//                 type="text"
-//                 placeholder="Enter You Email"
-//                 onChange={(e) => (this.email = e.target.value)}
-//               />
-//               <input className="input"
-//                 type="num"
-//                 placeholder="Enter You NumberPhone"
-//                 onChange={(e) => (this.numberphone = e.target.value)}
-//               />
-//                 <input className="input"
-//                 type="num"
-//                 placeholder="Enter You Age"
-//                 onChange={(e) => (this.age = e.target.value)}
-//               />
-//                 <input className="input"
-//                 type="text"
-//                 placeholder="Enter You  City"
-//                 onChange={(e) => (this.city = e.target.value)}
-//               />
-//                 <input className="input"
-//                 type="text"
-//                 placeholder="Enter You  Platoon"
-//                 onChange={(e) => (this.platoon = e.target.value)}
-//               />
-//               <input className="input"
-//                 type="text"
-//                 placeholder="Enter You  Platoon"
-//                 onChange={(e) => (this.platoon = e.target.value)}
-//               />
-          
-//               <button> <Link to="/mein"/> log in </button>
-//             </form>
-//           </div></div> </div>
-          
-// </div>
-//           <br/>
-//           <br/>
-//           <br/>
-        
-        
-       
-//         </div>
-//     );
-
-
-
