@@ -66,10 +66,10 @@ export default function Home() {
 
       <Button style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}}><h1>Appointment Booking</h1></Button>
 
-<p>
+{/* <p>
         {' '}
       {' '}
-      </p>
+      </p> */}
   <Button  style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}} onClick={()=>{
     navigate("/Questions")
   }}><h1>Appointment Booking</h1></Button>
