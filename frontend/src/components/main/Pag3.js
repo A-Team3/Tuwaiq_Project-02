@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
   <h1>First Blood Donor</h1>
   <img  style={{marginBottom:"50px",height:"400px"}}
       className="d-block w-100"
-      src="https://i.pinimg.com/564x/c2/c5/8e/c2c58e4f217b7daa48f50c36d76bd695.jpg"
+      src="https://i.pinimg.com/564x/13/dc/77/13dc77763efdfcb8ef49408bb3a673b4.jpg"
       alt="First slide"
     />
     <ul className="list-unstyled">
