@@ -5,11 +5,11 @@ export default function Questions() {
   const [q3, setQ2] = useState(false);
   const [q4, setQ3] = useState(false);
   const [q5, setQ4] = useState(false);
-  
+  const [Q6,setQ05]= useState(true);
 
   const checkAnswer1 = (answer) => {
     if (answer === "Yes") {
-      alert("You are not eligible to donate blood");
+      setQ05(false);
     } else if (answer === "No") {
       setQ1(true);
     }
@@ -17,21 +17,21 @@ export default function Questions() {
 
   const checkAnswer2 = (answer) => {
     if (answer === "Yes") {
-      alert("You are not eligible to donate blood");
+      setQ05(false);
     } else if (answer === "No") {
       setQ2(true);
     }
   };
   const checkAnswer3 = (answer) => {
     if (answer === "Yes") {
-      alert("Go You are not eligible to donate blood Q4");
+      setQ05(false);
     } else if (answer === "No") {
       setQ3(true);
     }
   };
   const checkAnswer4 = (answer) => {
     if (answer === "Yes") {
-      alert("Go You are not eligible to donate blood Q5");
+      setQ05(false);
     } else if (answer === "No") {
       setQ4(true);
     }
@@ -39,6 +39,7 @@ export default function Questions() {
   
 
   return (
+    Q6 ?
     <div style={{width: "18rem " ,marginTop: "30px",textAlign:"center",marginLeft:"40%" }}>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
@@ -149,5 +150,18 @@ export default function Questions() {
     
     
     </div>
+    :
+    <span
+    style={{
+      display: "block",
+      magin: "auto",
+      textAlign: "center",
+      fontSize: "large",
+      fontStyle: "bold",
+    }}
+  >
+  You are not eligible to donate blood
+  </span>
+
   );
 }

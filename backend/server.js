@@ -9,6 +9,7 @@ app.use(express.json());
 //third-party middleware
 app.use(cors());
 //app routers
+
 app.use('/users', userRouter);
 // new changes
 const PORT = process.env.PORT || 5000;

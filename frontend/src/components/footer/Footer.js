@@ -27,7 +27,7 @@ function Footer(){
               </div>
 
     
-              <Image style={{width:"60px",height:"60px",marginLeft:"45%"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfzn1T7H5Ls02u1zERewsVWKNPGI4HW3HO-Zy268QIIREz9_UKOrCIN1ULNLjXmSC21c&usqp=CAU" />
+           <Image style={{width:"60px",height:"60px",marginLeft:"45%"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfzn1T7H5Ls02u1zERewsVWKNPGI4HW3HO-Zy268QIIREz9_UKOrCIN1ULNLjXmSC21c&usqp=CAU"  />
   <Image style={{width:"80px",height:"80px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_eabwcDZTDqb3A20Hq7JmHXY3K5yEvgfsm26sOkj65ePMvobGrN6IBTJj1uk2tQPidq0&usqp=CAU" />
   
     
