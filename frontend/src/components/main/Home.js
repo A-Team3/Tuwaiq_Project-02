@@ -56,21 +56,14 @@ export default function Home() {
 
 
 
-      <Button style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}}><h1>Appointment Booking</h1></Button>
 
 {/* <p>
         {' '}
       {' '}
       </p> */}
-  <Button  style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}} onClick={()=>{
-<p>
-        {' '}
-      {' '}
-      </p>
-  <Button  style={{backgroundColor: "#BD1616", textAlign:"center",marginLeft:"35%",width:"450px",height:"150px"}} onClick={()=
+  <Button  style={{backgroundColor: "#BD1616", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}} onClick={()=>{
     navigate("/Questions")
   }}><h1>Appointment Booking</h1></Button>
-
 </div>
     )
 }

@@ -15,6 +15,7 @@ import "./main.css";
   const [age, setAge] = useState("");
   const [bloodGroup, setBloodGroup] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
   const [age18, setAge18]= useState(false);
   
   
@@ -37,10 +38,12 @@ axios.post('http://localhost:5000/users', {
   firstName: firstName,
   lastName: lastName,
   email: email,
+  password: password,
   age: age,
   city:city,
   bloodGroup:bloodGroup,
-  phoneNumber: phoneNumber
+  phoneNumber: phoneNumber,
+
 })
 .then(function (response) {
   console.log(response);
@@ -114,6 +117,10 @@ const navigate = useNavigate()
   <Form.Group className="mb-3" controlId="formBasicPlatoon">
     <Form.Label>Blood Group</Form.Label>
     <Form.Control type="bloodGroup" name="bloodGroup" value={bloodGroup} onChange={e => setBloodGroup(e.target.value)} placeholder="Enter Blood Group" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicPlatoon">
+    <Form.Label>password</Form.Label>
+    <Form.Control type="Password" name="Password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
   </Form.Group>
   
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
 import { Card,Col,Button } from "react-bootstrap";
 export default function Questions() {
   const [q2, setQ1] = useState(false);
@@ -6,7 +7,6 @@ export default function Questions() {
   const [q4, setQ3] = useState(false);
   const [q5, setQ4] = useState(false);
   const [Q6,setQ05]= useState(true);
-
   const checkAnswer1 = (answer) => {
     if (answer === "Yes") {
       setQ05(false);
@@ -14,7 +14,6 @@ export default function Questions() {
       setQ1(true);
     }
   };
-
   const checkAnswer2 = (answer) => {
     if (answer === "Yes") {
       setQ05(false);
@@ -36,16 +35,8 @@ export default function Questions() {
       setQ4(true);
     }
   };
-  
-  const checkAnswer5 = (answer) => {
-    if (answer === "Yes") {
-      alert("Go You are not eligible to donate blood Q5");
-    } else if (answer === "No") {
-      setQ5(true);
-    }
-  };
-  
-
+ 
+  const navigate = useNavigate()
   return (
     Q6 ?
     <div style={{width: "18rem " ,marginTop: "30px",textAlign:"center",marginLeft:"40%" }}>
@@ -55,7 +46,6 @@ export default function Questions() {
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text>DO you suffer from a high temperature ?</Card.Text>
           {/* <Button as={Col} variant="secondary" className="mx-2">Button #2</Button> */}
-
           <Button as={Col} style={{  width: "18rm" ,className:"mx-2",backgroundColor:"gray"}}
             onClick={() => {
               checkAnswer1("Yes");
@@ -63,7 +53,6 @@ export default function Questions() {
           >
             YES
             </Button>
-           
           <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
             onClick={() => {
               checkAnswer1("No");
@@ -73,7 +62,6 @@ export default function Questions() {
             </Button>{" "}
         </Card.Body>
       </Card>
-
       {q2 && (
         <Card style={{ width: "18rem", marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
@@ -100,7 +88,6 @@ export default function Questions() {
         </Card>
       )}
       {""}
-
       {q3 && (
         <Card style={{ width: "18rem " ,marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
@@ -127,6 +114,7 @@ export default function Questions() {
         </Card>
       )}
       {""}
+
       {q4 && (
         <Card style={{ width: "18rem" ,marginTop: "30px",textAlign:"center"}}>
           <Card.Body>
@@ -142,6 +130,7 @@ export default function Questions() {
             >
               YES
             </Button>
+            
             <Button as={Col} style={{ backgroundColor:"gray", marginLeft:"10px",variant:"secondary", width: "18rm" ,className:"mx-2"}}
               onClick={() => {
                 checkAnswer4("No");
@@ -149,19 +138,17 @@ export default function Questions() {
             >
               No
             </Button>
-                       
           </Card.Body>
-        
-        </Card>
-         
+          </Card>
+    
+
       )}
-       {q5 && (
+      {q5 && (
         <Button style={{margin:"20px",backgroundColor:"green"}}  onClick={() => {
-                checkAnswer5("No");
+          navigate("/Success");
               }}
  >Take An Appointment</Button>
        )}
-    
     </div>
     :
     <span
@@ -175,7 +162,5 @@ export default function Questions() {
   >
   You are not eligible to donate blood
   </span>
-
   );
-  
 }
