@@ -4,7 +4,8 @@ export default function Questions() {
   const [q2, setQ1] = useState(false);
   const [q3, setQ2] = useState(false);
   const [q4, setQ3] = useState(false);
-  const [q5, setQ4] = useState(false);
+   const [q5, setQ4] = useState(false);
+  const [q6, setQ5] = useState(false);
   
 
   const checkAnswer1 = (answer) => {
@@ -34,6 +35,14 @@ export default function Questions() {
       alert("Go You are not eligible to donate blood Q5");
     } else if (answer === "No") {
       setQ4(true);
+    }
+  };
+  
+  const checkAnswer5 = (answer) => {
+    if (answer === "Yes") {
+      alert("Go You are not eligible to donate blood Q5");
+    } else if (answer === "No") {
+      setQ5(true);
     }
   };
   
@@ -142,12 +151,18 @@ export default function Questions() {
             </Button>
                        
           </Card.Body>
-          <button style={{margin:"20px",backgroundColor:"green"}}><h5>Take An Appointment</h5></button>
+        
         </Card>
+         
       )}
-      
-    
+       {q5 && (
+        <Button style={{margin:"20px",backgroundColor:"green"}}  onClick={() => {
+                checkAnswer5("No");
+              }}
+ >Take An Appointment</Button>
+       )}
     
     </div>
   );
+  
 }

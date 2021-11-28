@@ -1,13 +1,13 @@
 import React, {useState} from "react";
-import {Form ,Button,Card}from "react-bootstrap";
+import {Form ,Button,Card, Container,img}from "react-bootstrap";
 // import {useNavigate} from 'react-router-dom';
-
+import "./Signin.css";
  import swal from 'sweet-alert';
 import axios from 'axios'
 export default function SignIn() {
 //   const nav = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword,profile,img] = useState("");
 
     // const navigation = useNavigate();
   function validateForm() {
@@ -33,36 +33,50 @@ console.log(err);
 });
    }
   return (
-    <div  style={{textAlign:"center",marginLeft:"35%",width:"200px"}}className="signIn">
 
-<Card style={{textAlign:"center",marginLeft:"20px",backgroundColor: "rgb(205, 92, 92)",width:"400px"}}>
-  <Card.Body>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label id="h">Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label id="h">Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button style={{backgroundColor: "rgb(68, 53, 53)"}}block size="lg" type="submit"  disabled={!validateForm()}>
-          Login
-        </Button>
-        
-      </Form>
+  
+  
 
-      </Card.Body>
-</Card>
+   <div  className="main">
+     
+     <div className="sub-main">
+
+     <div className= "img" >
+       <div>
+     <div className= "Container-img" >
+       <img style={{width:"100px",height:"100px"}} src="https://cdn04.qudsn.co/thumb/w1110/uploads/2016/01/face.jpg" alt="profile"  className="name ">  
+         
+         </img>
+         
     </div>
+
+
+    </div>
+     <div>
+
+   <h1>SignIn</h1>
+  <div> 
+  <input type="text" placeholder="user name" className="name1" />
+  <img style={{width:"20px",height:"20px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvBT4W7EoXYk-xWQvsgoMQQ87xddefgYTCIvZz7vwPCSR9gzD2gbow_OnEeTEwRaCdBc&usqp=CAU" alt="email"></img>
+  
+
+  </div>
+  <div>
+   
+  <input type="text" placeholder="password"  className="name2"/>
+  <img style={{width:"20px",height:"20px",marginBottom:"100px"}} src="https://www.freeiconspng.com/uploads/lock-icon-png-14.png" alt="password"/>
+   
+  
+  
+     </div>
+     <button style={{width:"80px",height:"50px",marginTop:100,backgroundColor:"gray"}}>SignIn</button>
+     </div>
+    </div>
+
+    
+    
+   </div>
+   
+     </div>   
   );
 }
