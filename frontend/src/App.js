@@ -34,6 +34,7 @@ export default function App() {
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/" element={<Home />} />
           <Route path="/people" element={<People/>} />
+          <Route path="/Success" element={<Success/>} />
 
         </Routes>
 
