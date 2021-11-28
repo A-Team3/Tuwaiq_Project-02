@@ -4,4 +4,11 @@ body {
     margin-left:"200px"; */
 color: rgb(68, 53, 53);
 /* background-color: rgb(213, 225, 236); */
+background-position: center;
   }
+
+#background-text{
+  margin-top: 26%;
+  width: 500px;
+  margin-left: 33%;
+}

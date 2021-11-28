@@ -11,6 +11,7 @@ import People from "./components/main/People";
 import "./App.css";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import Success from "./components/main/Success";
 
 
 
@@ -20,7 +21,8 @@ export default function App() {
     <div>
 
       <Header />
-      <div>
+      <Success/>
+      {/* <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" element={<SignUp />} />
@@ -36,7 +38,7 @@ export default function App() {
         </Routes>
 
         <Outlet />
-      </div>
+      </div> */}
 
       <Footer />
     </div>
