@@ -6,7 +6,6 @@ export default function Home() {
   const navigate = useNavigate()
     return(
       <div>
-
         <Carousel style={{marginBottom:"50px",textAlign:"center",marginLeft:"20%",width:"60%",height:"600%"}}>
   <Carousel.Item>
     <img  style={{width:"120px",height:"400px"}}
@@ -15,7 +14,6 @@ export default function Home() {
       alt="First slide"
     />
     <Carousel.Caption>
- 
     {/* <Button variant="outline-light" size="lg">
     blood bag trip
   </Button> */}
@@ -31,10 +29,8 @@ export default function Home() {
       alt=""
     />
     <Carousel.Caption>
-     
   <Link to="/pag2" style={{color:"black",textDecorationLine:"none"}} variant=""size="lg" ><h1>Blood Type Do You Give?</h1> </Link>
       {/* <h3>blood type do you give?</h3> */}
-
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -45,32 +41,18 @@ export default function Home() {
       alt=""
     />
     <Carousel.Caption>
-      
   <Link to ="/pag3" style={{color:"black",textDecorationLine:"none"}} variant=""size="lg" ><h1>First Blood Donor</h1></Link >
       {/* <h3>first blood donor</h3> */}
-
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-
-
-
       <Button style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}}><h1>Appointment Booking</h1></Button>
-
 {/* <p>
         {' '}
       {' '}
       </p> */}
-  <Button  style={{backgroundColor: "rgb(165, 157, 157)", textAlign:"center",marginLeft:"30%",width:"600px",height:"200px"}} onClick={()=>{
-<p>
-        {' '}
-      {' '}
-      </p>
-  <Button  style={{backgroundColor: "#BD1616", textAlign:"center",marginLeft:"35%",width:"450px",height:"150px"}} onClick={()=
-    navigate("/Questions")
-  }}><h1>Appointment Booking</h1></Button>
-
+  
 </div>
     )
 }
