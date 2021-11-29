@@ -20,8 +20,6 @@ import Success from "./components/main/Success";
 export default function App() {
   return (
     <div>
-
-      <Header />
        <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,9 +33,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/people" element={<People/>} />
           <Route path="/Success" element={<Success/>} />
-
         </Routes>
-
         <Outlet />
       </div> 
 

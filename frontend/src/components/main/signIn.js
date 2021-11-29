@@ -7,12 +7,15 @@ export default function SignIn() {
   //   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rong,setRong] = useState(false)
+  const [rong, setRong] = useState(false);
+
   // const navigation = useNavigate();
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
+
   const navigate = useNavigate();
+
   function handleSubmit(event) {
     event.preventDefault();
     axios
@@ -22,10 +25,21 @@ export default function SignIn() {
       })
       .then((res) => {
         console.log(res);
-        if (res.data !== "User not found"){
+        if (res.data !== "User not found") {
           navigate("/");
-        }
-        else{setRong(true);
+          sessionStorage.setItem("userId", res.data.id);
+          sessionStorage.setItem("email", res.data.email);
+          console.log(res.data.email);
+        } else {
+          const findUser = JSON.parse(localStorage.getItem("users"));
+          if (findUser.email == email && findUser.password == password) {
+            console.log(res.data);
+            sessionStorage.setItem("userId", findUser.id);
+            navigate("/");
+            console.log(res.data.email);
+          } else {
+            setRong(true);
+          }
         }
         //swal('Incorrect user name or password');
       })
@@ -77,21 +91,22 @@ export default function SignIn() {
           </Form>
         </Card.Body>
       </Card>
-      {rong &&
-    <center>
-     <span
-     style={{
-       display: "block",
-       margin: "auto",
-       textAlign: "center",
-       fontSize: "large",
-       fontStyle: "bold",
-       color: "red",
-     }}
-   >
-The Email or Password is Incorrect   </span>
-   </center>
-   }
+      {rong && (
+        <center>
+          <span
+            style={{
+              display: "block",
+              margin: "auto",
+              textAlign: "center",
+              fontSize: "large",
+              fontStyle: "bold",
+              color: "red",
+            }}
+          >
+            The Email or Password is Incorrect{" "}
+          </span>
+        </center>
+      )}
     </div>
   );
 }
