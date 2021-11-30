@@ -3,8 +3,11 @@ import React from "react";
 import {Card} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
  import { Link } from "react-router-dom"
+import Header from "../navigation/Header";
  export default function Pag1(){
      return(
+       <>
+       {/* <Header /> */}
          <div>
 <Card style={{marginBottom:"50px",marginLeft:"20%",width:"60%",height:"600%"}}>
   <Card.Body>
@@ -65,5 +68,6 @@ The name of the plates varies according to the method of extracting them, and th
 
 
          </div>
+         </>
      )
  }

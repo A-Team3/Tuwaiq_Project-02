@@ -3,7 +3,7 @@ import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import swal from "sweet-alert";
 import axios from "axios";
-export default function SignIn() {
+export default function SignIn(props) {
   //   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,12 +29,17 @@ export default function SignIn() {
           navigate("/");
           sessionStorage.setItem("userId", res.data.id);
           sessionStorage.setItem("email", res.data.email);
+          props.setUserName(res.data.firstName);
           console.log(res.data.email);
         } else {
           const findUser = JSON.parse(localStorage.getItem("users"));
           if (findUser.email == email && findUser.password == password) {
             console.log(res.data);
-            sessionStorage.setItem("userId", findUser.id);
+            // sessionStorage.setItem("userId", findUser.id);
+          props.setUsername(res.data.firstName);
+
+          // sessionStorage.setItem("name", findUser.firstName);
+
             navigate("/");
             console.log(res.data.email);
           } else {
@@ -80,6 +85,7 @@ export default function SignIn() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
+            <br></br>
             <Button
               style={{ backgroundColor: "rgb(68, 53, 53)" }}
               block
