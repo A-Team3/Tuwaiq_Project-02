@@ -1,3 +1,8 @@
+
+import React from 'react'
+
+import "./finle.css";
+
 import React, { useState, useEffect } from "react";
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
 
@@ -6,6 +11,18 @@ export default function Finle() {
   useEffect(() => {
     const app = JSON.parse(localStorage.getItem("Appoitment"));
     console.log(app);
+
+
+    return (
+        <div className="main" style={{ marginBottom: "50px",
+        textAlign: "center",
+        marginLeft: "20%",
+        width: "60%",
+        height: "600%",
+        color:"griy"}} variant=""size="lg"> 
+              {data !== null && data.length > 0 ? (
+                <Form>
+        <Row >
 
     const usr = sessionStorage.getItem("userId");
 
@@ -23,6 +40,7 @@ export default function Finle() {
     <div>
       {data !== null && data.length > 0 ? (
         <Row>
+
           {data &&
             data.map((elem) => {
               return (
@@ -35,16 +53,19 @@ export default function Finle() {
                       marginRight: "auto",
                     }}
                   >
-                    <Card.Body style={{ textAlign: "center" }}>
+                    <div className="sub-main">
+                    <Card.Body >
                       <Card.Title>Appoitment</Card.Title>
                       <Card.Text>{elem.hospital}</Card.Text>
                       <Card.Text>{elem.date}</Card.Text>
                     </Card.Body>
+                    </div>
                   </Card>
                 </Col>
               );
             })}
         </Row>
+        </Form>
       ) : null}
     </div>
   );
