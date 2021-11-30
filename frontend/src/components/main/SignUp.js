@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-//import {Link} from"react-router-dom";
 import "./main.css";
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -19,16 +18,6 @@ function SignUp() {
   const [age18, setAge18] = useState(false);
 
   function handleSubmit() {
-    //  console.log(firstName, lastName, age, email, bloodGroup);
-
-    //Check if age < 18 then show message that must have age above 18
-    //  axios.get('http://localhost:5000/users')
-    // .then(function (response) {
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
     const data = {
       id: 100,
       firstName: firstName,
@@ -43,7 +32,6 @@ function SignUp() {
     axios
       .post("http://localhost:5000/users", data)
       .then((response) => {
-        //alert("Correct");
         console.log(response);
         localStorage.setItem("users", JSON.stringify(data));
       })
@@ -80,13 +68,6 @@ function SignUp() {
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Enter First Name"
               />
-              {/* <input 
-          name='firstName' 
-          type='text'
-          value={firstName}
-          onChange={e => setFirstName(e.target.value)}
-        /> */}
-              {/* <Form.Control type="phoneNummber" name="phoneNumber" value={phoneNumber} onChange={e => handleChange(e.target.value)} placeholder="Enter Phone Number" /> */}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -98,12 +79,6 @@ function SignUp() {
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Enter Last Name"
               />
-              {/* <input 
-          name='firstName' 
-          type='text'
-          value={firstName}
-          
-        /> */}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -171,9 +146,6 @@ function SignUp() {
               />
             </Form.Group>
 
-            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group> */}
             <Button
               style={{ backgroundColor: "rgb(68, 53, 53)" }}
               onClick={() => {

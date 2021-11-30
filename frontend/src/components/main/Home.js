@@ -6,7 +6,7 @@ import Header from "../navigation/Header";
 export default function Home() {
   const navigate = useNavigate();
   const data = JSON.parse(localStorage.getItem("Appoitment"));
-  
+
   return (
     <div>
       <Carousel
@@ -26,9 +26,6 @@ export default function Home() {
             alt="First slide"
           />
           <Carousel.Caption>
-            {/* <Button variant="outline-light" size="lg">
-    blood bag trip
-  </Button> */}
             <Link
               to="/pag1"
               style={{ color: "black", textDecorationLine: "none" }}
@@ -38,7 +35,7 @@ export default function Home() {
               {" "}
               <h1> Blood Bag Trip</h1>{" "}
             </Link>
-            {/* <h3>blood bag trip</h3> */}
+
             <p></p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -58,7 +55,6 @@ export default function Home() {
             >
               <h1>Blood Type Do You Give?</h1>{" "}
             </Link>
-            {/* <h3>blood type do you give?</h3> */}
 
             <p></p>
           </Carousel.Caption>
@@ -79,17 +75,12 @@ export default function Home() {
             >
               <h1>First Blood Donor</h1>
             </Link>
-            {/* <h3>first blood donor</h3> */}
 
             <p></p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
 
-      {/* <p>
-        {' '}
-      {' '}
-      </p> */}
       <Button
         style={{
           backgroundColor: "#BD1616",
@@ -104,31 +95,6 @@ export default function Home() {
       >
         <h1>Appointment Booking</h1>
       </Button>
-      {/* {data !== null && data.length > 0 ? (
-        <Row>
-          {data &&
-            data.map((elem) => {
-              return (
-                <Col>
-                  <Card
-                    className="myCard"
-                    style={{
-                      textAlign: "center",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  >
-                    <Card.Body style={{ textAlign: "center" }}>
-                      <Card.Title>Appoitment</Card.Title>
-                      <Card.Text>{elem.hospital}</Card.Text>
-                      <Card.Text>{elem.date}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              );
-            })}
-        </Row>
-      ) : null} */}
     </div>
   );
 }

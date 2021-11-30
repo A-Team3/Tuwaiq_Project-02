@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SignIn from "./components/main/SignIn";
 import SignUp from "./components/main/SignUp";
 import Pag1 from "./components/main/Pag1";
@@ -14,50 +14,35 @@ import Footer from "./components/footer/Footer";
 import Success from "./components/main/Success";
 import Finle from "./components/main/Finle";
 
-
-
-
 export default function App() {
-   const [username, setUserName] = useState("");
-  // const [bloodGroup, setBloodGroup] = useState("");
+  const [username, setUserName] = useState("");
 
-  // useEffect(() => {
-  //   fetch("/users")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const user = data.find(
-  //         (elem) => elem.id === parseInt(sessionStorage.getItem("userId"))
-  //       );
-  //       setUserName(user.firstName);
-  //       console.log(username);
-  //       setBloodGroup(user.bloodGroup);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
   return (
     <div>
-      <Header userName = {username} />
+      <Header userName={username} />
 
-       <div>
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/SignIn" element={<SignIn setUserName = {setUserName} />} />
+          <Route
+            path="/SignIn"
+            element={<SignIn setUserName={setUserName} />}
+          />
           <Route path="/Pag1" element={<Pag1 />} />
           <Route path="/Pag2" element={<Pag2 />} />
           <Route path="/Pag3" element={<Pag3 />} />
           <Route path="/Questions" element={<Questions />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/" element={<Home />} />
-          <Route path="/people" element={<People/>} />
-          <Route path="/Success" element={<Success/>} />
-          <Route path="/Finle" element={<Finle/>} />
+          <Route path="/people" element={<People />} />
+          <Route path="/Success" element={<Success />} />
+          <Route path="/Finle" element={<Finle />} />
         </Routes>
         <Outlet />
-      </div> 
+      </div>
 
       <Footer />
     </div>
   );
 }
-

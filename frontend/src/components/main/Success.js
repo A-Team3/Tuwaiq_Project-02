@@ -2,16 +2,21 @@ import React from "react";
 
 import { Card, Button, Form, Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./main.css";
 import { useState } from "react";
 
 export default function Success() {
   const [hospital, setHospital] = useState("");
   const [date, setDate] = useState("");
-
-  const saveAppoitment = () => {
-    const obj = { hospital: hospital, date: date };
+  const navigate = useNavigate();
+  const saveAppoitment = (event) => {
+    console.log("Save Button Click");
+    const obj = {
+      hospital: hospital,
+      date: date,
+      userId: sessionStorage.getItem("userId"),
+    };
 
     const data = JSON.parse(localStorage.getItem("Appoitment"));
 
@@ -23,11 +28,11 @@ export default function Success() {
       newAppoitment.push(obj);
       localStorage.setItem("Appoitment", JSON.stringify(newAppoitment));
     }
-  }
+    event.preventDefault();
+    navigate("/");
+  };
 
-  // console.log(save);
   return (
-    // backgroundImage: `url("https://i.pinimg.com/564x/81/45/01/814501f62677f65ae78d9288be124c0b.jpg")`
     <div
       style={{
         textAlign: "center",
@@ -118,19 +123,12 @@ export default function Success() {
                 controlId="formBasicCheckbox"
               ></Form.Group>
             </Form>
-            <Button
-                href="/"
-                onClick={() => saveAppoitment()}
-                variant="primary"
-                type="button"
-              >
-                Submit
-              </Button>
+            <Button onClick={saveAppoitment} variant="primary" type="button">
+              Submit
+            </Button>
           </Col>
           <Col></Col>
         </Row>
-      </Container> */}
-      {/* <h1 id="background-text"> Congratulations, you are qualified!</h1> */}
     </div>
   );
 }
