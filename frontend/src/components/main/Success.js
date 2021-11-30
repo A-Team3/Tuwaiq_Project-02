@@ -18,7 +18,7 @@ export default function Success() {
     if (data !== null) {
       data.push(obj);
       localStorage.setItem("Appoitment", JSON.stringify(data));
-    }else{
+    } else {
       let newAppoitment = [];
       newAppoitment.push(obj);
       localStorage.setItem("Appoitment", JSON.stringify(newAppoitment));
@@ -38,7 +38,59 @@ export default function Success() {
         backgroundPosition: "center",
       }}
     >
-      <Container>
+      <div style={{
+        textAlign: "center", padding: "50px", marginTop: "0",
+        backgroundImage: `url("https://i.pinimg.com/564x/e9/8a/93/e98a932d61f9f733975e3583cf546d10.jpg")`,
+        width: "100%", height: "100vh", backgroundRepeat: "no-repeat", backgroundPosition: "center"
+      }}>
+
+        <Container>
+          <Row>
+            <Col></Col>
+            <Col style={{
+              left: "79px",
+              top: "25px",
+              position: "relative"
+            }}>
+              {" "}
+              <Form style={{ textAlign: "center", padding: "50px", marginBottom: "10px" }}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Name of Hospital</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter hospital"
+                    onChange={(e) => setHospital(e.target.value)}
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Reservation date</Form.Label>
+                  <Form.Control
+                    type="date"
+                    placeholder="Enter date"
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="formBasicCheckbox"
+                ></Form.Group>
+              </Form>
+              <Button
+                href="/"
+                onClick={() => saveAppoitment()}
+                variant="secondary"
+                type="button"
+              >
+                Done
+              </Button>
+            </Col>
+            <Col></Col>
+            {/* <Col></Col> */}
+          </Row>
+        </Container>
+      </div>
+      {/* <Container>
         <Row>
           <Col></Col>
           <Col>
@@ -77,7 +129,7 @@ export default function Success() {
           </Col>
           <Col></Col>
         </Row>
-      </Container>
+      </Container> */}
       {/* <h1 id="background-text"> Congratulations, you are qualified!</h1> */}
     </div>
   );
