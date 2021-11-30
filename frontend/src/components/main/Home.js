@@ -6,23 +6,9 @@ import Header from "../navigation/Header";
 export default function Home() {
   const navigate = useNavigate();
   const data = JSON.parse(localStorage.getItem("Appoitment"));
-  const [username, setUserName] = useState("");
-  const [bloodGroup, setBloodGroup] = useState("");
-
-  console.log(typeof data);
-  useEffect(() => {
-    fetch("/users")
-      .then((res) => res.json())
-      .then((data) => {
-        const user = data.find((elem) => elem.id === parseInt(sessionStorage.getItem("userId")));
-        setUserName(user.firstName);
-        setBloodGroup(user.bloodGroup);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  
   return (
     <div>
-      <Header name={username} bloodGroup={bloodGroup}/>
       <Carousel
         style={{
           marginBottom: "50px",
@@ -118,24 +104,31 @@ export default function Home() {
       >
         <h1>Appointment Booking</h1>
       </Button>
-      <Row>
-        <Col>
-          <Card
-            className="myCard"
-            style={{
-              textAlign: "center",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            <Card.Body style={{ textAlign: "center" }}>
-              <Card.Title>Appoitment</Card.Title>
-              <Card.Text>{data.hospital}</Card.Text>
-              <Card.Text>{data.date}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      {/* {data !== null && data.length > 0 ? (
+        <Row>
+          {data &&
+            data.map((elem) => {
+              return (
+                <Col>
+                  <Card
+                    className="myCard"
+                    style={{
+                      textAlign: "center",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  >
+                    <Card.Body style={{ textAlign: "center" }}>
+                      <Card.Title>Appoitment</Card.Title>
+                      <Card.Text>{elem.hospital}</Card.Text>
+                      <Card.Text>{elem.date}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
+        </Row>
+      ) : null} */}
     </div>
   );
 }

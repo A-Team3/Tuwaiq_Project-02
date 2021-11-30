@@ -8,6 +8,7 @@ import {
   Col,
   Row,
   InputGroup,
+  Form,
   FormControl,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +16,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "@restart/ui/esm/Button";
 
 export default function Header(props) {
+  // const [userName, setUserName] = useState();
   const navigate = useNavigate();
+  const data = JSON.parse(localStorage.getItem("Appoitment"));
+  // setUserName(sessionStorage.getItem("name"));
+   console.log('User Name in Header: ', props.userName);
   // const s =
   let [query, setQuery] = useState("");
   function handleChange(e) {
@@ -36,26 +41,18 @@ export default function Header(props) {
           <h5></h5>
           <Row>
             <Col xs={6} md={4}>
-            <Image
-              style={{ width: "80px", height: "80px" }}
-              src="https://play-lh.googleusercontent.com/hcA5UwVcIVIR3nxiAAl5tXMElHSqeoCJiqtMg8IbHDH5WC2ag5MAs40hUuHcyNC2u08"
-              roundedCircle
-            />
-          </Col>
-          <Col>
-          </Col>
+              <Image
+                style={{ width: "80px", height: "80px" }}
+                src="https://play-lh.googleusercontent.com/hcA5UwVcIVIR3nxiAAl5tXMElHSqeoCJiqtMg8IbHDH5WC2ag5MAs40hUuHcyNC2u08"
+                roundedCircle
+              />
+            </Col>
+            <Col></Col>
           </Row>
-          <p style={{color: 'white'}}>Hello: {props.name}, Blood Group: {props.bloodGroup}</p>
+          
           <Nav className="me-auto">
-            <Nav.Link>
-              <Link
-                style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/Footer"
-              >
-                Help
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
+          
+          <Nav.Link>
               {" "}
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
@@ -64,10 +61,19 @@ export default function Header(props) {
                 Home
               </Link>
             </Nav.Link>
-
-            <Nav.Link></Nav.Link>
-            <Nav.Link> </Nav.Link>
-            <Nav.Link>
+            
+          <Nav.Link>
+              {" "}
+              <Link
+                style={{ textDecorationLine: "none", color: "whitesmoke" }}
+                to="/SignIn"
+              >
+                SignIn
+              </Link>
+            </Nav.Link>
+            
+          <Nav.Link>
+              {" "}
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
                 to="/SignUp"
@@ -78,13 +84,38 @@ export default function Header(props) {
             <Nav.Link>
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/SignIn"
+                to="/Footer"
               >
-                SignIn
+                Help
               </Link>
             </Nav.Link>
 
-            <InputGroup className="mb-3">
+            <Nav.Link></Nav.Link>
+            <Nav.Link> </Nav.Link>
+            
+            
+            
+<Nav.Link>
+<Link
+                style={{ textDecorationLine: "none", color: "whitesmoke" }}
+                to="/Finle"
+              >
+                Appointments
+              </Link>
+  
+</Nav.Link>
+
+          {/* <p
+            style={{ color: "white", cursor: "pointer" }}
+            onClick={() => {
+              navigate("/Finle");
+            }}
+          >
+            Appointement(s):
+            {data !== null && data.length > 0 ? (data.length) : null}
+          </p> */}
+          
+          {/* <InputGroup >
               <FormControl
                 placeholder="Blood types"
                 aria-label="Blood types"
@@ -98,8 +129,28 @@ export default function Header(props) {
               >
                 search
               </Button>
-            </InputGroup>
-          </Nav>
+            </InputGroup> */}
+            </Nav>
+            <Form className="d-flex">
+        {/* <FormControl
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        /> */}
+        <FormControl
+                placeholder="Blood types"
+                aria-label="Blood types"
+                className="me-2"
+                aria-describedby="basic-addon2"
+                onChange={handleChange}
+              />
+        <Button variant="outline-success" onClick={handleClick}>Search</Button>
+      </Form>    
+      &nbsp;
+      <span>&nbsp;&nbsp;</span>
+          <p  className = "d-flex me-2" style={{ textAlign:"right",  color: "white", marginTop: "8px" }}>
+            Hello: {props.userName}
+          </p>      
         </Container>
       </Navbar>
     </>
