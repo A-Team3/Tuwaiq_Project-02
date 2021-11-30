@@ -34,11 +34,9 @@ export default function SignIn(props) {
         } else {
           const findUser = JSON.parse(localStorage.getItem("users"));
           if (findUser.email == email && findUser.password == password) {
-            console.log(res.data);
-            // sessionStorage.setItem("userId", findUser.id);
-          props.setUsername(res.data.firstName);
+            console.log(findUser);
 
-          // sessionStorage.setItem("name", findUser.firstName);
+            props.setUserName(findUser.firstName);
 
             navigate("/");
             console.log(res.data.email);
@@ -46,11 +44,9 @@ export default function SignIn(props) {
             setRong(true);
           }
         }
-        //swal('Incorrect user name or password');
       })
       .catch((err) => {
         console.log(err);
-        //swal('not correct')
       });
   }
   return (

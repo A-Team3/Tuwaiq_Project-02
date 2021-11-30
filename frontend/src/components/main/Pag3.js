@@ -70,11 +70,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
         </ul>
   </Card.Body>
 </Card>
-{/* <Form style={{marginLeft:"10%",width:"500%",height:"600%"}}>
-<div>
-     
-</div>
-</Form> */}
 
          </div>
      )

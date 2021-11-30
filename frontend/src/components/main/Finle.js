@@ -1,12 +1,27 @@
-import React from 'react'
-import { Form, Button, Card ,Row,Col} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Form, Button, Card, Row, Col } from "react-bootstrap";
 
 export default function Finle() {
-  const data = JSON.parse(localStorage.getItem("Appoitment"));
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const app = JSON.parse(localStorage.getItem("Appoitment"));
+    console.log(app);
 
-    return (
-        <div>
-              {data !== null && data.length > 0 ? (
+    const usr = sessionStorage.getItem("userId");
+
+    if (app) {
+      const result = app.filter(({ userId }) => {
+        return userId == usr;
+      });
+      console.log(result);
+      if (result) setData(result);
+      else setData([]);
+    }
+  }, []);
+
+  return (
+    <div>
+      {data !== null && data.length > 0 ? (
         <Row>
           {data &&
             data.map((elem) => {
@@ -31,6 +46,6 @@ export default function Finle() {
             })}
         </Row>
       ) : null}
-        </div>
-    )
+    </div>
+  );
 }
