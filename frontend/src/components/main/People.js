@@ -21,25 +21,21 @@ export default function People() {
   const [peopleData, setPeopleData] = useState([]);
 
   useEffect(() => {
-    // Update the peopleData from API
-    // console.log("useEffect inside people")
     axios
       .post("users/people", {
         bloodGroup: state.bloodGroup,
       })
       .then((res) => {
-        // console.log(res);
+        
         if (res.data.length > 0) setPeopleData(res.data);
         else
             setPeopleData([]);
         if (res.data !== "User not found") {
-          //          navigate("/");
+         
         }
-        //swal('Incorrect user name or password');
+        
       })
       .catch((err) => {
-        //console.log(err);
-        //swal('not correct')
       });
   }, [state]);
 
@@ -60,7 +56,7 @@ export default function People() {
           </tr>
         </thead>
         <tbody>
-          {/* how map is used inside table */}
+          
 
           {peopleData.map((item, i) => {
             return (

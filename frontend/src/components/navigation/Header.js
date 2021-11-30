@@ -16,21 +16,18 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "@restart/ui/esm/Button";
 
 export default function Header(props) {
-  // const [userName, setUserName] = useState();
   const navigate = useNavigate();
   const data = JSON.parse(localStorage.getItem("Appoitment"));
-  // setUserName(sessionStorage.getItem("name"));
-   console.log('User Name in Header: ', props.userName);
-  // const s =
+
+  console.log("User Name in Header: ", props.userName);
+
   let [query, setQuery] = useState("");
   function handleChange(e) {
     setQuery(e.target.value);
   }
   function handleClick(e) {
     e.preventDefault();
-    //console.log('inside click event');
-    //console.log(query);
-    //useNavigate ShowAll People with this blood type
+
     navigate("/people", { state: { bloodGroup: query } });
   }
   return (
@@ -49,10 +46,8 @@ export default function Header(props) {
             </Col>
             <Col></Col>
           </Row>
-          
           <Nav className="me-auto">
-          
-          <Nav.Link>
+            <Nav.Link>
               {" "}
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
@@ -61,8 +56,8 @@ export default function Header(props) {
                 Home
               </Link>
             </Nav.Link>
-            
-          <Nav.Link>
+
+            <Nav.Link>
               {" "}
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
@@ -71,8 +66,8 @@ export default function Header(props) {
                 SignIn
               </Link>
             </Nav.Link>
-            
-          <Nav.Link>
+
+            <Nav.Link>
               {" "}
               <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
@@ -92,65 +87,36 @@ export default function Header(props) {
 
             <Nav.Link></Nav.Link>
             <Nav.Link> </Nav.Link>
-            
-            
-            
-<Nav.Link>
-<Link
+
+            <Nav.Link>
+              <Link
                 style={{ textDecorationLine: "none", color: "whitesmoke" }}
                 to="/Finle"
               >
                 Appointments
               </Link>
-  
-</Nav.Link>
-
-          {/* <p
-            style={{ color: "white", cursor: "pointer" }}
-            onClick={() => {
-              navigate("/Finle");
-            }}
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <FormControl
+              placeholder="Blood types"
+              aria-label="Blood types"
+              className="me-2"
+              aria-describedby="basic-addon2"
+              onChange={handleChange}
+            />
+            <Button variant="outline-success" onClick={handleClick}>
+              Search
+            </Button>
+          </Form>
+          &nbsp;
+          <span>&nbsp;&nbsp;</span>
+          <p
+            className="d-flex me-2"
+            style={{ textAlign: "right", color: "white", marginTop: "8px" }}
           >
-            Appointement(s):
-            {data !== null && data.length > 0 ? (data.length) : null}
-          </p> */}
-          
-          {/* <InputGroup >
-              <FormControl
-                placeholder="Blood types"
-                aria-label="Blood types"
-                aria-describedby="basic-addon2"
-                onChange={handleChange}
-              />
-              <Button
-                variant="outline-secondary"
-                id="button-addon2"
-                onClick={handleClick}
-              >
-                search
-              </Button>
-            </InputGroup> */}
-            </Nav>
-            <Form className="d-flex">
-        {/* <FormControl
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        /> */}
-        <FormControl
-                placeholder="Blood types"
-                aria-label="Blood types"
-                className="me-2"
-                aria-describedby="basic-addon2"
-                onChange={handleChange}
-              />
-        <Button variant="outline-success" onClick={handleClick}>Search</Button>
-      </Form>    
-      &nbsp;
-      <span>&nbsp;&nbsp;</span>
-          <p  className = "d-flex me-2" style={{ textAlign:"right",  color: "white", marginTop: "8px" }}>
             Hello: {props.userName}
-          </p>      
+          </p>
         </Container>
       </Navbar>
     </>
