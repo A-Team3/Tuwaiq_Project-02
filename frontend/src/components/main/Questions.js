@@ -40,13 +40,27 @@ export default function Questions() {
   return Q6 ? (
     <div
       style={{
+        
         width: "18rem ",
         marginTop: "30px",
         textAlign: "center",
         marginLeft: "40%",
       }}
     >
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ 
+         textAlign: "center",
+         justifyContent: "center",
+         display: "flex",
+         padding: "90px 0 90px 0",
+         backgroundAttachment: "rgb(180, 133, 133)",
+         display:"flex",
+     height: "200px",
+    
+     boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+     paddingTop:"100px" ,
+     border: "radius 60px",
+     backgroundColor:" rg (243, 233, 233)",
+        width: "18rem" }}>
         <Card.Body>
           <Card.Title>Q1</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
@@ -83,7 +97,19 @@ export default function Questions() {
       </Card>
       {q2 && (
         <Card
-          style={{ width: "18rem", marginTop: "30px", textAlign: "center" }}
+          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
+          justifyContent: "center",
+          display: "flex",
+          padding: "90px 0 90px 0",
+          backgroundAttachment: "rgb(180, 133, 133)",
+          display:"flex",
+      height: "200px",
+     
+      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+      paddingTop:"100px" ,
+      border: "radius 60px",
+      backgroundColor:" rg (243, 233, 233)",
+       }}
         >
           <Card.Body>
             <Card.Title>Q2</Card.Title>
@@ -125,7 +151,19 @@ export default function Questions() {
       {""}
       {q3 && (
         <Card
-          style={{ width: "18rem ", marginTop: "30px", textAlign: "center" }}
+          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
+          justifyContent: "center",
+          display: "flex",
+          padding: "90px 0 90px 0",
+          backgroundAttachment: "rgb(180, 133, 133)",
+          display:"flex",
+      height: "200px",
+     
+      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+      paddingTop:"100px" ,
+      border: "radius 60px",
+      backgroundColor:" rg (243, 233, 233)",
+  }}
         >
           <Card.Body>
             <Card.Title>Q3</Card.Title>
@@ -168,7 +206,19 @@ export default function Questions() {
 
       {q4 && (
         <Card
-          style={{ width: "18rem", marginTop: "30px", textAlign: "center" }}
+          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
+          justifyContent: "center",
+          display: "flex",
+          padding: "90px 0 90px 0",
+          backgroundAttachment: "rgb(180, 133, 133)",
+          display:"flex",
+      height: "200px",
+     
+      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+      paddingTop:"100px" ,
+      border: "radius 60px",
+      backgroundColor:" rg (243, 233, 233)",
+  }}
         >
           <Card.Body>
             <Card.Title>Q4</Card.Title>
@@ -211,14 +261,17 @@ export default function Questions() {
         </Card>
       )}
       {q5 && (
+        
         <Button
-          style={{ margin: "20px", backgroundColor: "green" }}
+          style={{ margin: "20px", backgroundColor: "green", width: "13rem", marginTop: "40px",
+  }}
           onClick={() => {
             navigate("/Success");
           }}
         >
           Take An Appointment
         </Button>
+        
       )}
     </div>
   ) : (
