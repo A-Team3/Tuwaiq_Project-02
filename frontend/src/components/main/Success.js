@@ -34,7 +34,14 @@ export default function Success() {
 
   return (
     <div
-      style={{
+      style={{display:"flex",
+      justifyContent: "center",
+      height: "550px",
+      width: "35%",
+      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+      paddingTop:"30px" ,
+      border: "radius 60px", 
+      backgroundColor:" rg (243, 233, 233)",
         textAlign: "center",
         padding: "50px",
         width: "100%",
@@ -44,9 +51,20 @@ export default function Success() {
       }}
     >
       <div style={{
-        textAlign: "center", padding: "50px", marginTop: "0",
+         textAlign: "center",
+         justifyContent: "center",
+         display: "flex",
+         padding: "90px 0 90px 0",
+         backgroundAttachment: "rgb(180, 133, 133)",
+         display:"flex",
+     height: "550px",
+     width:" 35%",
+     boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+     paddingTop:"30px" ,
+     border: "radius 60px",
+     backgroundColor:" rg (243, 233, 233)",
+        
         backgroundImage: `url("https://i.pinimg.com/564x/e9/8a/93/e98a932d61f9f733975e3583cf546d10.jpg")`,
-        width: "100%", height: "100vh", backgroundRepeat: "no-repeat", backgroundPosition: "center"
       }}>
 
         <Container>
@@ -81,54 +99,14 @@ export default function Success() {
                   controlId="formBasicCheckbox"
                 ></Form.Group>
               </Form>
-              <Button
-                href="/"
-                onClick={() => saveAppoitment()}
-                variant="secondary"
-                type="button"
-              >
-                Done
+              <Button onClick={saveAppoitment} variant="primary" type="button"> Done
               </Button>
             </Col>
             <Col></Col>
-            {/* <Col></Col> */}
+          
           </Row>
         </Container>
       </div>
-      {/* <Container>
-        <Row>
-          <Col></Col>
-          <Col>
-            {" "}
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Name of Hospital</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter hospital"
-                  onChange={(e) => setHospital(e.target.value)}
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Reservation date</Form.Label>
-                <Form.Control
-                  type="date"
-                  placeholder="Enter date"
-                  onChange={(e) => setDate(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="formBasicCheckbox"
-              ></Form.Group>
-            </Form>
-            <Button onClick={saveAppoitment} variant="primary" type="button">
-              Submit
-            </Button>
-          </Col>
-          <Col></Col>
-        </Row>
-    </div>
+        </div>
   );
 }

@@ -1,46 +1,36 @@
-
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import "./finle.css";
-
-import React, { useState, useEffect } from "react";
-import { Form, Button, Card, Row, Col } from "react-bootstrap";
-
+import { Form, Button, Card ,Row,Col} from "react-bootstrap";
 export default function Finle() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const app = JSON.parse(localStorage.getItem("Appoitment"));
-    console.log(app);
-
-
+    const [data, setData] = useState([]);
+    useEffect(() =>{
+        const app = JSON.parse(localStorage.getItem("Appoitment"));
+        console.log(app);
+      //   const appointments = data.filter() where user id is
+          const usr = sessionStorage.getItem('userId');
+          //console.log(usr);
+          if(app)
+          {
+          const result = app.filter( ({ userId }) =>  {
+             return  userId == usr });
+          console.log(result);
+          if(result)
+              setData(result);
+          else
+              setData([]);
+          }
+              //console.log(data);
+    },[])
     return (
-        <div className="main" style={{ marginBottom: "50px",
+        <div className= "main" style={{ marginBottom: "50px",
         textAlign: "center",
         marginLeft: "20%",
         width: "60%",
         height: "600%",
-        color:"griy"}} variant=""size="lg"> 
+        color:"griy"}} variant=""size="lg">
               {data !== null && data.length > 0 ? (
-                <Form>
-        <Row >
-
-    const usr = sessionStorage.getItem("userId");
-
-    if (app) {
-      const result = app.filter(({ userId }) => {
-        return userId == usr;
-      });
-      console.log(result);
-      if (result) setData(result);
-      else setData([]);
-    }
-  }, []);
-
-  return (
-    <div>
-      {data !== null && data.length > 0 ? (
         <Row>
-
           {data &&
             data.map((elem) => {
               return (
@@ -53,8 +43,8 @@ export default function Finle() {
                       marginRight: "auto",
                     }}
                   >
-                    <div className="sub-main">
-                    <Card.Body >
+                      <div className="sub-main">
+                    <Card.Body>
                       <Card.Title>Appoitment</Card.Title>
                       <Card.Text>{elem.hospital}</Card.Text>
                       <Card.Text>{elem.date}</Card.Text>
@@ -65,8 +55,7 @@ export default function Finle() {
               );
             })}
         </Row>
-        </Form>
       ) : null}
-    </div>
-  );
+        </div>
+    )
 }
