@@ -99,7 +99,7 @@ export default function Success() {
                   controlId="formBasicCheckbox"
                 ></Form.Group>
               </Form>
-              <Button onClick={saveAppoitment} variant="primary" type="button"> Done
+              <Button onClick={saveAppoitment} variant="secondary" type="button"> Done
               </Button>
             </Col>
             <Col></Col>

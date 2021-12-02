@@ -7,7 +7,7 @@ import Header from "../navigation/Header";
  export default function Pag1(){
      return(
        <>
-       {/* <Header /> */}
+      
          <div>
 <Card style={{marginBottom:"50px",marginLeft:"20%",width:"60%",height:"600%"}}>
   <Card.Body>
