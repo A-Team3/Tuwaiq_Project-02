@@ -4,15 +4,10 @@ import { useNavigate } from "react-router-dom";
 import swal from "sweet-alert";
 import axios from "axios";
 export default function SignIn(props) {
-  //   const nav = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rong, setRong] = useState(false);
-
-  // const navigation = useNavigate();
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
 
   const navigate = useNavigate();
 
@@ -33,7 +28,7 @@ export default function SignIn(props) {
           console.log(res.data.email);
         } else {
           const findUser = JSON.parse(localStorage.getItem("users"));
-          if (findUser.email == email && findUser.password == password) {
+          if (findUser !== null && (findUser.email === email && findUser.password === password)) {
             console.log(findUser);
 
             props.setUserName(findUser.firstName);
@@ -42,6 +37,7 @@ export default function SignIn(props) {
             console.log(res.data.email);
           } else {
             setRong(true);
+            return;
           }
         }
       })

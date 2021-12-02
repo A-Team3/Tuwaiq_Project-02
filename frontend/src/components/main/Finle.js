@@ -7,9 +7,9 @@ export default function Finle() {
     useEffect(() =>{
         const app = JSON.parse(localStorage.getItem("Appoitment"));
         console.log(app);
-      //   const appointments = data.filter() where user id is
+      
           const usr = sessionStorage.getItem('userId');
-          //console.log(usr);
+          
           if(app)
           {
           const result = app.filter( ({ userId }) =>  {
@@ -20,7 +20,7 @@ export default function Finle() {
           else
               setData([]);
           }
-              //console.log(data);
+            
     },[])
     return (
         <div className= "main" style={{ marginBottom: "50px",

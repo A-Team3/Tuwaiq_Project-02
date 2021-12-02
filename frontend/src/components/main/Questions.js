@@ -8,7 +8,7 @@ export default function Questions() {
   const [q5, setQ4] = useState(false);
   const [Q6, setQ05] = useState(true);
   const checkAnswer1 = (answer) => {
-    if (answer === "Yes") {
+    if (answer === "Yes") {G
       setQ05(false);
     } else if (answer === "No") {
       setQ1(true);
