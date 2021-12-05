@@ -4,7 +4,6 @@ import { Form, Button, Card } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import "./main.css";
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -41,15 +40,8 @@ function SignUp() {
   }
   const navigate = useNavigate();
   return (
-    <div style={{ textAlign: "center", marginLeft: "35%", width: "200px" }}>
-      <Card
-        style={{
-          textAlign: "center",
-          marginLeft: "20px",
-          backgroundColor: "rgb(205, 92, 92)",
-          width: "400px",
-        }}
-      >
+    <div className="SignUp">
+      <Card className="cardSignUp">
         <Card.Body>
           <h1>You Need SignUp</h1>
 
@@ -147,7 +139,7 @@ function SignUp() {
             </Form.Group>
 
             <Button
-              style={{ backgroundColor: "rgb(68, 53, 53)" }}
+              className="ButtonSignUp"
               onClick={() => {
                 if (age >= 18) {
                   navigate("/SignIn");
@@ -166,18 +158,7 @@ function SignUp() {
 
       {age18 && (
         <center>
-          <span
-            style={{
-              display: "block",
-              margin: "auto",
-              textAlign: "center",
-              fontSize: "large",
-              fontStyle: "bold",
-              color: "red",
-            }}
-          >
-            You Must Be an Adult
-          </span>
+          <span className="spanSignUp">You Must Be an Adult</span>
         </center>
       )}
     </div>

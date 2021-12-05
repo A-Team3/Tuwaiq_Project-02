@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import swal from "sweet-alert";
 import axios from "axios";
-export default function SignIn(props) {
 
+export default function SignIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rong, setRong] = useState(false);
@@ -28,7 +27,11 @@ export default function SignIn(props) {
           console.log(res.data.email);
         } else {
           const findUser = JSON.parse(localStorage.getItem("users"));
-          if (findUser !== null && (findUser.email === email && findUser.password === password)) {
+          if (
+            findUser !== null &&
+            findUser.email === email &&
+            findUser.password === password
+          ) {
             console.log(findUser);
 
             props.setUserName(findUser.firstName);
@@ -46,18 +49,8 @@ export default function SignIn(props) {
       });
   }
   return (
-    <div
-      style={{ textAlign: "center", marginLeft: "35%", width: "200px" }}
-      className="signIn"
-    >
-      <Card
-        style={{
-          textAlign: "center",
-          marginLeft: "20px",
-          backgroundColor: "rgb(205, 92, 92)",
-          width: "400px",
-        }}
-      >
+    <div className="signIn">
+      <Card className="cardSignIn">
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group size="lg" controlId="email">
@@ -78,12 +71,7 @@ export default function SignIn(props) {
               />
             </Form.Group>
             <br></br>
-            <Button
-              style={{ backgroundColor: "rgb(68, 53, 53)" }}
-              block
-              size="lg"
-              type="submit"
-            >
+            <Button className="ButtoSignIn" block size="lg" type="submit">
               Login
             </Button>
           </Form>
@@ -91,16 +79,7 @@ export default function SignIn(props) {
       </Card>
       {rong && (
         <center>
-          <span
-            style={{
-              display: "block",
-              margin: "auto",
-              textAlign: "center",
-              fontSize: "large",
-              fontStyle: "bold",
-              color: "red",
-            }}
-          >
+          <span className="spanSignIn">
             The Email or Password is Incorrect{" "}
           </span>
         </center>

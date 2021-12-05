@@ -26,21 +26,15 @@ export default function People() {
         bloodGroup: state.bloodGroup,
       })
       .then((res) => {
-        
         if (res.data.length > 0) setPeopleData(res.data);
-        else
-            setPeopleData([]);
+        else setPeopleData([]);
         if (res.data !== "User not found") {
-         
         }
-        
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, [state]);
 
-  return ( 
-      peopleData.length > 0?
+  return peopleData.length > 0 ? (
     <div>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -56,8 +50,6 @@ export default function People() {
           </tr>
         </thead>
         <tbody>
-          
-
           {peopleData.map((item, i) => {
             return (
               <tr key={i}>
@@ -75,18 +67,7 @@ export default function People() {
         </tbody>
       </Table>
     </div>
-  :
-     
-      <span
-        style={{
-          display: "block",
-          magin: "auto",
-          textAlign: "center",
-          fontSize: "large",
-          fontStyle: "bold",
-        }}
-      >
-        No People Found
-      </span>
-    );
+  ) : (
+    <span className="spanPeople">No People Found</span>
+  );
 }
