@@ -32,14 +32,14 @@ export default function Header(props) {
   }
   return (
     <>
-      <Navbar style={{ backgroundColor: "black", marginBottom: "50px" }}>
+      <Navbar className="NavbarHeader">
         <Container>
-          <Navbar.Brand style={{ color: "whitesmoke" }}>Wateen</Navbar.Brand>
+          <Navbar.Brand className="NavbarHeader1">Wateen</Navbar.Brand>
           <h5></h5>
           <Row>
             <Col xs={6} md={4}>
               <Image
-                style={{ width: "80px", height: "80px" }}
+                className="ImageHeader"
                 src="https://play-lh.googleusercontent.com/hcA5UwVcIVIR3nxiAAl5tXMElHSqeoCJiqtMg8IbHDH5WC2ag5MAs40hUuHcyNC2u08"
                 roundedCircle
               />
@@ -49,38 +49,26 @@ export default function Header(props) {
           <Nav className="me-auto">
             <Nav.Link>
               {" "}
-              <Link
-                style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/"
-              >
+              <Link className="LinkHeader" to="/">
                 Home
               </Link>
             </Nav.Link>
 
             <Nav.Link>
               {" "}
-              <Link
-                style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/SignIn"
-              >
+              <Link className="LinkHeader" to="/SignIn">
                 SignIn
               </Link>
             </Nav.Link>
 
             <Nav.Link>
               {" "}
-              <Link
-                style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/SignUp"
-              >
+              <Link className="LinkHeader" to="/SignUp">
                 SignUp
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link
-                style={{ textDecorationLine: "none", color: "whitesmoke" }}
-                to="/Footer"
-              >
+              <Link className="LinkHeader" to="/Footer">
                 Help
               </Link>
             </Nav.Link>
@@ -111,12 +99,7 @@ export default function Header(props) {
           </Form>
           &nbsp;
           <span>&nbsp;&nbsp;</span>
-          <p
-            className="d-flex me-2"
-            style={{ textAlign: "right", color: "white", marginTop: "8px" }}
-          >
-            Hello: {props.userName}
-          </p>
+          <p className="pHeader">Hello: {props.userName}</p>
         </Container>
       </Navbar>
     </>

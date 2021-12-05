@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { Card, Col, Button } from "react-bootstrap";
 export default function Questions() {
@@ -8,7 +9,7 @@ export default function Questions() {
   const [q5, setQ4] = useState(false);
   const [Q6, setQ05] = useState(true);
   const checkAnswer1 = (answer) => {
-    if (answer === "Yes") {G
+    if (answer === "Yes") {
       setQ05(false);
     } else if (answer === "No") {
       setQ1(true);
@@ -38,55 +39,29 @@ export default function Questions() {
 
   const navigate = useNavigate();
   return Q6 ? (
-    <div
-      style={{
-        
-        width: "18rem ",
-        marginTop: "30px",
-        textAlign: "center",
-        marginLeft: "40%",
-      }}
+    <div className="questions"
+      
     >
-      <Card style={{ 
-         textAlign: "center",
-         justifyContent: "center",
-         display: "flex",
-         padding: "90px 0 90px 0",
-         backgroundAttachment: "rgb(180, 133, 133)",
-         display:"flex",
-     height: "200px",
-    
-     boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
-     paddingTop:"100px" ,
-     border: "radius 60px",
-     backgroundColor:" rg (243, 233, 233)",
-        width: "18rem" }}>
+       <Card className="CardQuestions" >
+
+
         <Card.Body>
+
           <Card.Title>Q1</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text>DO you suffer from a high temperature ?</Card.Text>
-          <Button
+          <Button className="ButtonQuestions1"
             as={Col}
-            style={{
-              width: "18rm",
-              className: "mx-2",
-              backgroundColor: "gray",
-            }}
+            
             onClick={() => {
               checkAnswer1("Yes");
             }}
           >
             YES
           </Button>
-          <Button
+          <Button className="ButtonQuestions2"
             as={Col}
-            style={{
-              backgroundColor: "gray",
-              marginLeft: "10px",
-              variant: "secondary",
-              width: "18rm",
-              className: "mx-2",
-            }}
+            
             onClick={() => {
               checkAnswer1("No");
             }}
@@ -96,49 +71,25 @@ export default function Questions() {
         </Card.Body>
       </Card>
       {q2 && (
-        <Card
-          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
-          justifyContent: "center",
-          display: "flex",
-          padding: "90px 0 90px 0",
-          backgroundAttachment: "rgb(180, 133, 133)",
-          display:"flex",
-      height: "200px",
+        <Card className="CardQuestions"
      
-      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
-      paddingTop:"100px" ,
-      border: "radius 60px",
-      backgroundColor:" rg (243, 233, 233)",
-       }}
         >
           <Card.Body>
             <Card.Title>Q2</Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>Have you taken aspirin within 48 hours?</Card.Text>
-            <Button
+            <Button className="ButtonQuestions1"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer2("Yes");
               }}
             >
               YES
             </Button>
-            <Button
+            <Button className="ButtonQuestions2"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer2("No");
               }}
@@ -150,49 +101,25 @@ export default function Questions() {
       )}
       {""}
       {q3 && (
-        <Card
-          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
-          justifyContent: "center",
-          display: "flex",
-          padding: "90px 0 90px 0",
-          backgroundAttachment: "rgb(180, 133, 133)",
-          display:"flex",
-      height: "200px",
-     
-      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
-      paddingTop:"100px" ,
-      border: "radius 60px",
-      backgroundColor:" rg (243, 233, 233)",
-  }}
+        <Card className="CardQuestions"
+  
         >
           <Card.Body>
             <Card.Title>Q3</Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>Have you donated blood in the past 60 days?</Card.Text>
-            <Button
+            <Button className="ButtonQuestions1"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer3("Yes");
               }}
             >
               YES
             </Button>
-            <Button
+            <Button className="ButtonQuestions2"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer3("No");
               }}
@@ -205,20 +132,8 @@ export default function Questions() {
       {""}
 
       {q4 && (
-        <Card
-          style={{ width: "18rem", marginTop: "30px",    textAlign: "center",
-          justifyContent: "center",
-          display: "flex",
-          padding: "90px 0 90px 0",
-          backgroundAttachment: "rgb(180, 133, 133)",
-          display:"flex",
-      height: "200px",
-     
-      boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
-      paddingTop:"100px" ,
-      border: "radius 60px",
-      backgroundColor:" rg (243, 233, 233)",
-  }}
+        <Card className="CardQuestions"
+    
         >
           <Card.Body>
             <Card.Title>Q4</Card.Title>
@@ -226,15 +141,9 @@ export default function Questions() {
             <Card.Text>
               Have you had any surgery within the previous 12 months?
             </Card.Text>
-            <Button
+            <Button className="ButtonQuestions1"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer4("Yes");
               }}
@@ -242,15 +151,9 @@ export default function Questions() {
               YES
             </Button>
 
-            <Button
+            <Button className="ButtonQuestions2"
               as={Col}
-              style={{
-                backgroundColor: "gray",
-                marginLeft: "10px",
-                variant: "secondary",
-                width: "18rm",
-                className: "mx-2",
-              }}
+              
               onClick={() => {
                 checkAnswer4("No");
               }}
@@ -262,9 +165,8 @@ export default function Questions() {
       )}
       {q5 && (
         
-        <Button
-          style={{ margin: "20px", backgroundColor: "green", width: "13rem", marginTop: "40px",
-  }}
+        <Button className="ButtonQuestions3"
+       
           onClick={() => {
             navigate("/Success");
           }}
@@ -275,14 +177,8 @@ export default function Questions() {
       )}
     </div>
   ) : (
-    <span
-      style={{
-        display: "block",
-        magin: "auto",
-        textAlign: "center",
-        fontSize: "large",
-        fontStyle: "bold",
-      }}
+    <span className="spanQuestions"
+      
     >
       You are not eligible to donate blood
     </span>
