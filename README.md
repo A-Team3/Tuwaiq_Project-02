@@ -1,6 +1,5 @@
 <img width="400" alt="Tuwaiq academy logo" src="https://tuwaiq.edu.sa/assets/images/tuwaiq-logo.svg"> <img width="350" height="80" alt="Tuwaiq1000 logo" src="https://launch.sa/assets/images/logos/tuwaiq1000-dark.svg" align="right">
 
-
 # Tuwaiq_Project-02
 
 # Project Ideas
@@ -28,3 +27,4 @@
 - Fanction-based components with useState,useEffect,useParams,and useNavigate hooks
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrIR38KorGnYZG4zr9350v1My28U0OZ70OsYzbgTAQvvOOjrdcFVG1A22cbfCS00XjHA&usqp=CAU">
+
